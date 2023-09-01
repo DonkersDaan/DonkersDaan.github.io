@@ -1,0 +1,684 @@
+@font-face {
+    font-family: Header;
+    src: url(./Fonts/Major_Mono_Display/MajorMonoDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: Paragraph;
+    src: url(./Fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf);
+}
+
+html {
+    touch-action: manipulation;
+}
+
+* {
+    overflow: hidden;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer and Microsoft Edge */
+}
+
+
+body {
+    background-color: #272222;
+    /* position: relative; */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    touch-action: none;
+
+
+
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 50px solid #555;
+    border-bottom: 50px solid #555;
+}
+
+#work-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0);
+    z-index: 2;
+    pointer-events: none;
+    /* animation: dark 3s forwards; */
+
+}
+
+@keyframes dark {
+    0% {
+        background-color: rgba(255, 255, 255, 0);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        background-color: rgb(0, 0, 0);
+    }
+}
+
+
+
+#work-container::before {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.5rem;
+    /* background: linear-gradient(to right, rgba(255, 255, 255, 0.539), rgba(255, 255, 255, 0.211), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.153), rgba(255, 255, 255, 0.539)); */
+}
+
+#left {
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    position: absolute;
+    left: 1%;
+    bottom: 2%;
+
+}
+
+#right {
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    position: absolute;
+    left: 49%;
+    bottom: 2%;
+
+}
+
+#my-work-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 95%;
+    height: 96%;
+    clip-path: polygon(65% 0%, 100% 35%, 100% 100%, 0 100%, 0 0);
+
+
+    /* background: rgba(72, 72, 72, 0.197); */
+    /* background: rgba(0, 0, 0, 0.089); */
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.301), rgba(255, 255, 255, 0.192));
+    overflow-y: scroll;
+    border-radius: 1%;
+    border-bottom: 0.3vw solid rgba(0, 0, 0, 0.664);
+    border-left: 0.3vw solid rgba(0, 0, 0, 0.699);
+
+    /* filter: drop-shadow(5px -5px 3px #ffffff); */
+
+}
+
+.image {
+    width: 50vw;
+    height: auto;
+    margin: 1%;
+    position: relative;
+    /* box-shadow: -5px 15px #ffffff2a; */
+}
+
+.video {
+    height: auto;
+    width: 50vw;
+    /* margin: 1%; */
+    display: none;
+    position: relative;
+
+    z-index: 15;
+}
+
+.p1 {
+    transform: rotateY(180deg);
+    width: 45vw;
+    font-family: Paragraph;
+    font-size: large;
+
+    /* padding-left: 0%; */
+    /* padding-top: 10%; */
+    color: #ffffffe0;
+}
+
+h1 {
+    font-family: Header;
+    transform: rotateY(180deg);
+
+
+    color: #ffffff;
+}
+
+
+
+#my-work-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    height: 96%;
+    clip-path: polygon(65% 0%, 100% 35%, 100% 100%, 0 100%, 0 0);
+
+    border-radius: 1%;
+    border-bottom: 0.3vw solid rgba(0, 0, 0, 0.664);
+    border-left: 0.3vw solid rgba(0, 0, 0, 0.699);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.501), rgba(187, 187, 187, 0.068));
+    /* background: rgba(101, 101, 101, 0.197); */
+    transform: rotateY(180deg);
+    overflow-y: scroll;
+
+    /* filter: drop-shadow(5px -5px 3px #ffffff); */
+
+
+
+}
+
+
+/* Hide the scrollbar for webkit-based browsers (Chrome, Safari) */
+#my-work-left::-webkit-scrollbar {
+    width: 0.01em;
+    /* Adjust the width as needed */
+}
+
+#my-work-right::-webkit-scrollbar {
+    width: 0.01em;
+    /* Adjust the width as needed */
+}
+
+#work-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+    /* Set the color to transparent */
+}
+
+
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    background: white;
+}
+
+.text {
+    flex: 1;
+    padding: 10px;
+
+    /* Add any additional styles for the text container */
+}
+
+
+
+#pyramid-container {
+    overflow: visible !important;
+    display: flex;
+    justify-content: center;
+    /* Optional: Adjust this according to your needs */
+    align-items: start;
+    /* Optional: Adjust this according to your needs */
+    height: 100vh;
+    /* Optional: Set the height of the container */
+    width: 30vw;
+    position: absolute;
+
+    top: 2.5%;
+
+
+    z-index: 4;
+    /* Add your desired clip-path and background */
+    clip-path: polygon(50% 30%, 0% 0%, 100% 0%);
+    background: conic-gradient(#47474715, #78787818);
+    /* animation: pulseShadow2 5s infinite; */
+    filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.623))
+}
+
+@keyframes pulseShadow {
+    0% {
+        filter: drop-shadow(2rem 0.5rem 2.5rem rgb(255, 255, 255));
+    }
+
+    25% {
+        filter: drop-shadow(2rem 1.5rem 3.65rem rgb(255, 255, 255));
+    }
+
+    50% {
+        filter: drop-shadow(1rem 1.5rem 0.65rem rgb(255, 255, 255));
+    }
+
+    75% {
+        filter: drop-shadow(-2rem 0.5rem 5.5rem rgb(255, 255, 255));
+    }
+
+    100% {
+        filter: drop-shadow(2rem 0.5rem 2.5rem rgb(255, 255, 255));
+    }
+}
+
+.button:hover {
+    /* background-color: #666; */
+    color: white;
+    cursor: pointer;
+}
+
+.button.special {
+    color: white;
+}
+
+
+.pyramid-loader {
+    /* margin: auto; */
+    max-width: 100%;
+    max-height: 100%;
+    width: 300px;
+    height: 300px;
+    display: block;
+    transform-style: preserve-3d;
+    transform: rotateX(-10deg);
+    overflow: visible !important;
+
+    position: inherit;
+    top: 5%;
+    /* transition: transform 3.3s ease; */
+
+
+
+}
+
+.jump {
+    animation: Jump 2s infinite linear;
+}
+
+
+@keyframes Jump {
+    0% {
+        top: 5%;
+    }
+
+    20% {
+        top: 4%;
+    }
+
+    35% {
+        top: 5%;
+    }
+
+    55% {
+        top: 4.5%;
+    }
+
+    70% {
+        top: 5%;
+    }
+
+
+
+}
+
+#button-container {
+    height: 50vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    z-index: 1;
+
+}
+
+.button {
+    /* max-width: 3vw; */
+    border: none;
+    color: #000000be;
+    background-color: rgba(0, 0, 0, 0);
+    /* clip-path: polygon(50% 100%, 0% 0%, 100% 0%); */
+    height: fit-content;
+    width: fit-content;
+    font-size: 1.2rem;
+    opacity: 1;
+    filter: drop-shadow(0px 0rem 0.1rem #ffffff);
+    font-family: Paragraph;
+}
+
+
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+
+    overflow: visible !important;
+
+}
+
+.pyramid-loader.clicked {
+    animation: spin 1.8s ease-in-out;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotateY(90deg) rotateZ(-10deg);
+        ;
+    }
+}
+
+.sphere {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    filter: blur(5px);
+    animation: colorChangeSphere 8s linear infinite;
+}
+
+.sphere.visible {
+    opacity: 1;
+}
+
+.pyramid-loader .wrapper .side {
+    width: 50%;
+    height: 49%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: -20px 0px 0px 75px;
+    transform-origin: center bottom;
+    /* Change from 'center top' to 'center bottom' */
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+    /* Change the polygon points to flip it */
+    /* background: conic-gradient(#ffffff, #ffffff, #ffffff, #ffffff); */
+    background: rgba(255, 255, 255, 0.35);
+
+
+    animation: pulseShadow 6s linear infinite;
+}
+
+.pyramid-loader .wrapper .side1 {
+    transform: rotateZ(30deg) rotateY(90deg);
+
+}
+
+.pyramid-loader .wrapper .side2 {
+    transform: rotateZ(-30deg) rotateY(90deg);
+
+}
+
+.pyramid-loader .wrapper .side3 {
+    transform: rotateX(-30deg);
+    pointer-events: none;
+
+
+}
+
+.side4::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--y, 0) * 1px - 75px);
+    left: calc(var(--x, 0) * 1px - 75px);
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(white, #3984ff00 75%);
+
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+
+.side4:hover::after {
+    opacity: 1;
+}
+
+.pyramid-loader .wrapper .side4 {
+    transform: rotateX(30deg);
+    cursor: pointer;
+}
+
+.lines {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0%;
+    right: 0;
+    height: 100vh;
+    margin: auto;
+    width: 100vw;
+
+}
+
+.linesTop {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0%;
+    right: 0;
+    height: 100vh;
+    margin: auto;
+    width: 70vw;
+}
+
+.linesTopright {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0%;
+    right: 0;
+    height: 100vh;
+    margin: auto;
+    width: 70vw;
+}
+
+.lineTopright {
+    position: absolute;
+
+    width: 10px;
+    height: 100%;
+
+    bottom: 49.5%;
+    left: 39.5%;
+    background: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    transform: rotateZ(-90deg);
+}
+
+#work-container::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 400vh;
+    width: 100vw;
+    top: 0%;
+
+    /* animation: drop2 5s 0s infinite; */
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.8, 2, 0, 0);
+    z-index: 10;
+    pointer-events: none;
+    /* Make it click-through */
+}
+
+.animation-active::after {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 75%, #ffffff00 100%);
+    animation: drop2 6s 0s;
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+    /* Make it click-through */
+}
+
+.lineTop {
+    position: absolute;
+
+    width: 10px;
+    height: 100%;
+
+    bottom: 49.5%;
+    left: 31.1%;
+    background: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    transform: rotateZ(90deg);
+}
+
+.lineTop::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 120vh;
+    width: 100%;
+    top: -70%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 75%, #ffffff00 100%);
+    /* animation: drop2 5s 0s linear; */
+    /* animation-fill-mode: forwards; */
+    animation-timing-function: cubic-bezier(0.4, 0, 0, 0);
+
+}
+
+.line:nth-child(1) {
+    margin-left: -50%;
+
+}
+
+.line:nth-child(2) {
+    display: none;
+
+}
+
+
+.line:nth-child(3) {
+    margin-left: 50%;
+
+}
+
+@keyframes drop {
+    0% {
+        top: -500%;
+    }
+
+    100% {
+        top: 110%;
+    }
+
+}
+
+@keyframes drop2 {
+    0% {
+        top: -300%;
+    }
+
+    100% {
+        top: 200%;
+    }
+
+}
+
+@media only screen and (max-width: 1600px) {
+    .pyramid-loader {
+        width: 275px;
+        height: 275px;
+    }
+
+    .pyramid-loader .wrapper {
+
+        right: 2.1%;
+        bottom: 0;
+
+    }
+
+
+}
+
+@media only screen and (max-width: 1400px) {
+    .p1 {
+        font-size: medium;
+    }
+
+    h1 {
+
+        font-size: x-large;
+    }
+
+    .button {
+        font-size: medium;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .p1 {
+        font-size: small;
+    }
+
+    h1 {
+        font-family: Header;
+        font-size: large;
+    }
+
+    .button {
+        font-size: small;
+    }
+
+
+}
+
+@media only screen and (max-width: 900px) {
+    .pyramid-loader {
+        width: 250px;
+        height: 250px;
+    }
+
+    .pyramid-loader .wrapper {
+
+        right: 5%;
+        bottom: 0;
+
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .pyramid-loader {
+        width: 200px;
+        height: 200px;
+    }
+
+    .pyramid-loader .wrapper {
+
+        right: 12.5%;
+        bottom: 0;
+
+    }
+}
