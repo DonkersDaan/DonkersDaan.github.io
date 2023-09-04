@@ -8,7 +8,7 @@ function syncScroll(event) {
         if (event.target === myWorkLeft) {
             myWorkRight.scrollTop = myWorkLeft.scrollTop;
         } else if (event.target === myWorkRight) {
-            myWorkLeft.scrollTop = myWorkRight.scrollTop;
+            // myWorkLeft.scrollTop = myWorkRight.scrollTop;
         }
         isScrolling = false;
     }

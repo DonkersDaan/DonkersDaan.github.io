@@ -85,7 +85,7 @@ pyramidSides.addEventListener("mousemove", (e) => {
 });
 
 pyramidSides.addEventListener('click', () => {
-    pyramidLoader.classList.remove('jump');
+    // pyramidLoader.classList.remove('jump');
     clearInterval(fadeIn);
     clearInterval(fadeOut);
     overlay.style.display = 'none';
@@ -102,8 +102,6 @@ pyramidSides.addEventListener('click', () => {
             changeBackgroundColor();
         }, 500);
 
-
-
         setTimeout(() => {
             pyramidLoader.classList.remove('clicked');
             isAnimating = false;
@@ -114,6 +112,7 @@ pyramidSides.addEventListener('click', () => {
 
 
 function changeBackgroundColor() {
+
     let steps = 100; // Number of steps for the transition
     let step = 0;
 
@@ -138,9 +137,9 @@ function changeBackgroundColor() {
             let b = Math.round(initialRgb[2] + bDiff * step);
 
             document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-            pyramidSides.forEach((side) => {
-                side.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${alpha})`;
-            });
+            // pyramidSides.forEach((side) => {
+            //     side.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+            // });
         }
     }, 10); // The interval will run every 10 milliseconds for a smooth transition
 }
