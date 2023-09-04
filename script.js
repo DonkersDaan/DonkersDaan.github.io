@@ -304,19 +304,17 @@ function preloadVideo() {
 
     // Set a poster image as a placeholder
     // video.poster = "./BestProjects/tafels.png";
-    document.addEventListener('DOMContentLoaded', function () {
-        const imagesWithLoading = document.querySelectorAll('image[loading="lazy"]');
 
-        video.addEventListener("canplaythrough", function () {
-            setTimeout(function () {
-                imagesWithLoading.forEach((image) => {
-                    image.removeAttribute('loading');
-                });
-            }, 2000); // Wait for 5 seconds before removing the "loading" attribute from images
+    // const imagesWithLoading = document.querySelectorAll('image[loading="lazy"]');
+
+    video.addEventListener("canplaythrough", function () {
+        images.forEach((image) => {
+            image.removeAttribute('loading');
         });
-
-        // Your code to remove the loading attribute goes here
     });
+
+    // Your code to remove the loading attribute goes here
+
     // Add an event listener to start playing the video when it's ready
 
     // Add event listeners for pausing and resuming the video on hover
