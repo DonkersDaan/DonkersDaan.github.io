@@ -309,11 +309,11 @@ function preloadVideo() {
 
     video.addEventListener("canplaythrough", function () {
         setTimeout(() => {
-          console.log("Delayed for 7 seconds.");
+          console.log("Delayed for 4 seconds.");
              images.forEach((image) => {
                 image.removeAttribute('loading');
             });
-        }, 7000);
+        }, 4000);
     });
 
     // Your code to remove the loading attribute goes here
