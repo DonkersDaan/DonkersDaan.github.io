@@ -305,15 +305,15 @@ function ARBook() {
         image.style.display = "none";
     });
 
-    video.src = "./Hobby/BenteDaanVid1.mp4";
+    // video.src = "./Hobby/BenteDaanVid1.mp4";
     video.style.display = "initial";
 
+    video.play();
+    video.loop = true;
     // Once the video is loaded, play it
-    video.oncanplaythrough = function () {
-        video.play();
-        video.loop = true;
-    };
+    // video.oncanplaythrough = function () {
 
+    // };
     video.addEventListener("mouseover", function () {
         video.pause();
     });
