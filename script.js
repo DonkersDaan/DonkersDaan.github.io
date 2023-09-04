@@ -297,19 +297,26 @@ function changeGAG() {
 
 function preloadVideo() {
     // Load the video in the background
+    console.log(`Removed 'loading' attribute from image with src: ${image.src}`);
     video.src = "./Hobby/BenteDaanVid1.mp4";
     video.load(); // This will start loading the video
 
     // Set a poster image as a placeholder
     // video.poster = "./BestProjects/tafels.png";
+    document.addEventListener('DOMContentLoaded', function () {
 
-    // Add an event listener to start playing the video when it's ready
-    video.addEventListener("canplaythrough", function () {
-        images.forEach((image) => {
-            image.removeAttribute("loading");
+        video.addEventListener("canplaythrough", function () {
+            setTimeout(function () {
+                images.forEach((image) => {
+                    image.removeAttribute("loading");
 
+                });
+            }, 6000); // Wait for 5 seconds before removing the "loading" attribute from images
         });
+
+        // Your code to remove the loading attribute goes here
     });
+    // Add an event listener to start playing the video when it's ready
 
     // Add event listeners for pausing and resuming the video on hover
     video.addEventListener("mouseover", function () {
@@ -321,6 +328,10 @@ function preloadVideo() {
     });
 }
 
+video.addEventListener("error", function () {
+    console.error("Error loading the video.");
+    // You can take appropriate action here, such as showing an error message.
+});
 
 function ARBook() {
     media.style.justifyContent = "center";
@@ -330,6 +341,7 @@ function ARBook() {
 
     images.forEach((image) => {
         image.style.display = "none";
+
     });
 
     video.src = "./Hobby/BenteDaanVid1.mp4";
