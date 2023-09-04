@@ -308,9 +308,12 @@ function preloadVideo() {
     // const imagesWithLoading = document.querySelectorAll('image[loading="lazy"]');
 
     video.addEventListener("canplaythrough", function () {
-        images.forEach((image) => {
-            image.removeAttribute('loading');
-        });
+        setTimeout(() => {
+          console.log("Delayed for 7 seconds.");
+             images.forEach((image) => {
+                image.removeAttribute('loading');
+            });
+        }, 7000);
     });
 
     // Your code to remove the loading attribute goes here
