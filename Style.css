@@ -65,7 +65,7 @@ body {
     right: 0;
     bottom: 0;
     background-color: rgb(0, 0, 0);
-    z-index: 2;
+    z-index: 5;
     pointer-events: none;
     /* animation: dark 3s forwards; */
 
@@ -88,7 +88,7 @@ body {
 #work-container::before {
     content: '';
     position: absolute;
-    z-index: 5;
+    z-index: 6;
     top: 0;
     left: 0;
     width: 100%;
@@ -188,7 +188,7 @@ body {
 
 .video {
     height: auto;
-    width: 50vw;
+    width: 90vw;
     /* margin: 1%; */
     display: none;
     position: relative;
@@ -296,7 +296,7 @@ h1 {
     top: 2.5%;
 
 
-    z-index: 4;
+    z-index: 6;
     /* Add your desired clip-path and background */
     clip-path: polygon(50% 30%, 0% 0%, 100% 0%);
     background: conic-gradient(#47474715, #78787818);
@@ -350,15 +350,27 @@ h1 {
 
     position: inherit;
     top: 5%;
-    z-index: 0;
+    z-index: 5;
     /* transition: transform 3.3s ease; */
-
+    animation: dummy 0.01s alternate infinite;
 
 
 }
 
+@keyframes dummy {
+    0% {
+        top: 5%;
+    }
+
+    100% {
+        top: 4.99%;
+        /* Tiny, almost imperceptible movement */
+    }
+}
+
 .jump {
     animation: Jump 2s infinite ease-in-out;
+
 }
 
 
@@ -511,7 +523,7 @@ h1 {
     cursor: pointer;
 }
 
-.lines {
+/* .lines {
     position: absolute;
     z-index: -1;
     top: 0;
@@ -556,7 +568,7 @@ h1 {
     background: rgba(255, 255, 255, 0);
     overflow: hidden;
     transform: rotateZ(-90deg);
-}
+} */
 
 #work-container::after {
     content: '';
@@ -569,7 +581,7 @@ h1 {
     /* animation: drop2 5s 0s infinite; */
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.8, 2, 0, 0);
-    z-index: 10;
+    z-index: 1;
     pointer-events: none;
 
     /* Make it click-through */
@@ -584,7 +596,7 @@ h1 {
     /* Make it click-through */
 }
 
-.lineTop {
+/* .lineTop {
     position: absolute;
 
     width: 10px;
@@ -606,8 +618,7 @@ h1 {
     top: -70%;
     left: 0;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 75%, #ffffff00 100%);
-    /* animation: drop2 5s 0s linear; */
-    /* animation-fill-mode: forwards; */
+
     animation-timing-function: cubic-bezier(0.4, 0, 0, 0);
 
 }
@@ -626,7 +637,7 @@ h1 {
 .line:nth-child(3) {
     margin-left: 50%;
 
-}
+} */
 
 @keyframes drop {
     0% {
