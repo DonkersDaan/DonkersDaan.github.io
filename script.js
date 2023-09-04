@@ -301,7 +301,7 @@ function preloadVideo() {
     video.load(); // This will start loading the video
 
     // Set a poster image as a placeholder
-    video.poster = "./BestProjects/tafels.png";
+    // video.poster = "./BestProjects/tafels.png";
 
     // Add an event listener to start playing the video when it's ready
     video.addEventListener("canplaythrough", function () {
