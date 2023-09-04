@@ -85,7 +85,7 @@ pyramidSides.addEventListener("mousemove", (e) => {
 });
 
 pyramidSides.addEventListener('click', () => {
-    // pyramidLoader.classList.remove('jump');
+    pyramidLoader.classList.remove('jump');
     clearInterval(fadeIn);
     clearInterval(fadeOut);
     overlay.style.display = 'none';
