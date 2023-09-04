@@ -286,14 +286,38 @@ function changeGAG() {
 
 }
 
+// function preloadVideo() {
+//     var preloadVideo = document.createElement("video");
+//     preloadVideo.src = "./Hobby/BenteDaanVid1.mp4";
+//     preloadVideo.preload = "auto";
+//     preloadVideo.load();
+//     preloadVideo.style.display = "none";
+//     document.body.appendChild(preloadVideo);
+// }
+
 function preloadVideo() {
-    var preloadVideo = document.createElement("video");
-    preloadVideo.src = "./Hobby/BenteDaanVid1.mp4";
-    preloadVideo.preload = "auto";
-    preloadVideo.load();
-    preloadVideo.style.display = "none";
-    document.body.appendChild(preloadVideo);
+    // Load the video in the background
+    video.src = "./Hobby/BenteDaanVid1.mp4";
+    video.load(); // This will start loading the video
+
+    // Set a poster image as a placeholder
+    video.poster = "./BestProjects/tafels.png";
+
+    // Add an event listener to start playing the video when it's ready
+    video.addEventListener("canplaythrough", function () {
+        video.play();
+    });
+
+    // Add event listeners for pausing and resuming the video on hover
+    video.addEventListener("mouseover", function () {
+        video.pause();
+    });
+
+    video.addEventListener("mouseleave", function () {
+        video.play();
+    });
 }
+
 
 function ARBook() {
     media.style.justifyContent = "center";
@@ -305,7 +329,7 @@ function ARBook() {
         image.style.display = "none";
     });
 
-    // video.src = "./Hobby/BenteDaanVid1.mp4";
+    video.src = "./Hobby/BenteDaanVid1.mp4";
     video.style.display = "initial";
 
     video.play();
