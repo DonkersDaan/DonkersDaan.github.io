@@ -305,7 +305,10 @@ function preloadVideo() {
 
     // Add an event listener to start playing the video when it's ready
     video.addEventListener("canplaythrough", function () {
-        video.play();
+        images.forEach((image) => {
+            image.removeAttribute("loading");
+
+        });
     });
 
     // Add event listeners for pausing and resuming the video on hover
