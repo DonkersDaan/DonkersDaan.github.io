@@ -296,22 +296,23 @@ function changeGAG() {
 // }
 
 function preloadVideo() {
+
+    // console.log(`Removed 'loading' attribute from image with src: ${image.src}`);
     // Load the video in the background
-    console.log(`Removed 'loading' attribute from image with src: ${image.src}`);
     video.src = "./Hobby/BenteDaanVid1.mp4";
     video.load(); // This will start loading the video
 
     // Set a poster image as a placeholder
     // video.poster = "./BestProjects/tafels.png";
     document.addEventListener('DOMContentLoaded', function () {
+        const imagesWithLoading = document.querySelectorAll('image[loading="lazy"]');
 
         video.addEventListener("canplaythrough", function () {
             setTimeout(function () {
-                images.forEach((image) => {
-                    image.removeAttribute("loading");
-
+                imagesWithLoading.forEach((image) => {
+                    image.removeAttribute('loading');
                 });
-            }, 6000); // Wait for 5 seconds before removing the "loading" attribute from images
+            }, 2000); // Wait for 5 seconds before removing the "loading" attribute from images
         });
 
         // Your code to remove the loading attribute goes here
