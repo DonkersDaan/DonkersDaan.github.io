@@ -29,6 +29,8 @@ let originalRight = parseFloat(right.style.left) || 49;
 let moved = false;
 let moveOnce = 0;
 
+// Preload the video when the page loads
+window.addEventListener("load", preloadVideo);
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -284,6 +286,15 @@ function changeGAG() {
 
 }
 
+function preloadVideo() {
+    var preloadVideo = document.createElement("video");
+    preloadVideo.src = "./Hobby/BenteDaanVid1.mp4";
+    preloadVideo.preload = "auto";
+    preloadVideo.load();
+    preloadVideo.style.display = "none";
+    document.body.appendChild(preloadVideo);
+}
+
 function ARBook() {
     media.style.justifyContent = "center";
     media.style.alignItems = "center";
@@ -295,20 +306,21 @@ function ARBook() {
     });
 
     video.src = "./Hobby/BenteDaanVid1.mp4";
-
     video.style.display = "initial";
-    video.play();
-    video.loop = true;
+
+    // Once the video is loaded, play it
+    video.oncanplaythrough = function () {
+        video.play();
+        video.loop = true;
+    };
 
     video.addEventListener("mouseover", function () {
         video.pause();
     });
 
     video.addEventListener("mouseleave", function () {
-
         video.play();
-    })
-
+    });
 }
 
 function Others() {
@@ -401,3 +413,29 @@ function getImageText(index, category) {
 }
 
 
+// function ARBook() {
+//     media.style.justifyContent = "center";
+//     media.style.alignItems = "center";
+//     media.style.flexDirection = "";
+//     media.style.flexWrap = "";
+
+//     images.forEach((image) => {
+//         image.style.display = "none";
+//     });
+
+//     video.src = "./Hobby/BenteDaanVid1.mp4";
+
+//     video.style.display = "initial";
+//     video.play();
+//     video.loop = true;
+
+//     video.addEventListener("mouseover", function () {
+//         video.pause();
+//     });
+
+//     video.addEventListener("mouseleave", function () {
+
+//         video.play();
+//     })
+
+// }
