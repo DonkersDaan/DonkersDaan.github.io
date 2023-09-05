@@ -79,6 +79,7 @@ pyramidSides.addEventListener("mousemove", (e) => {
 });
 
 pyramidSides.addEventListener('click', () => {
+    overlay.style.pointerEvents = "none";
     turnCounter = 1;
     prismText.style.display = "none";
     pyramidLoader.classList.remove('jump');
