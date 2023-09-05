@@ -7,18 +7,6 @@ let isAnimating = false;
 let isChangingColor = false;
 let turnCounter = 0;
 let currentColor = "#272222"; // Initial background color
-// const rainbowColors = ["#BF8686", "#C0A67C", "#C0C09A", "#87C087", "#8787C0", "#A387C0", "#C087AE", "#3f3536"];
-// const rainbowColors = ["#D95E5E", "#D9A25E", "#D9D95E", "#5ED95E", "#5E80D9", "#735ED9", "#995ED9", "#3f3536"];
-// const rainbowColors = [
-//     "#8b4343",   // Darker Red
-//     "#FFA866",   // Darker Orange
-//     "#cfd14c",   // Adjusted Yellow
-//     "#1E995E",   // Darker Green
-//     "#1E1E99",   // Darker Blue
-//     "#481E99",   // Darker Indigo
-//     "#8A1E99",   // Darker Violet
-//     "#4E4C4C"    // Darker Grey Color
-// ];
 
 const rainbowColors = [
     "#770000",   // Darker Red

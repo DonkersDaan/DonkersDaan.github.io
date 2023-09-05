@@ -134,7 +134,8 @@ body {
     /* background: rgba(72, 72, 72, 0.197); */
     /* background: rgba(0, 0, 0, 0.089); */
     background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.301), rgba(255, 255, 255, 0.192));
-    overflow-y: scroll;
+    overflow-x: hidden;
+
 
     border-radius: 1%;
     border-bottom: 0.3vw solid rgba(0, 0, 0, 0.664);
@@ -146,11 +147,20 @@ body {
 
 .image {
     width: 45vw;
-    height: auto;
+
     margin: 1%;
     position: relative;
     top: 0%;
+    z-index: 2;
     /* box-shadow: -5px 15px #ffffff2a; */
+}
+
+.daan {
+    width: 50vw;
+}
+
+#RedBubble:hover {
+    cursor: pointer;
 }
 
 .scrollindication {
@@ -158,7 +168,18 @@ body {
 }
 
 @keyframes scroll {
-    0% {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5vh);
+        /* Adjust the percentage as needed */
+    }
+
+    /* 0% {
         top: 0%;
     }
 
@@ -169,7 +190,7 @@ body {
 
     100% {
         top: 0%;
-    }
+    } */
 }
 
 .image:hover {
@@ -219,8 +240,6 @@ h1 {
 
 }
 
-
-
 #my-work-right {
     display: flex;
     /* justify-content: center; */
@@ -237,7 +256,7 @@ h1 {
     background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.501), rgba(187, 187, 187, 0.068));
     /* background: rgba(101, 101, 101, 0.197); */
     transform: rotateY(180deg);
-    overflow-y: scroll;
+    overflow: hidden;
 
     /* filter: drop-shadow(5px -5px 3px #ffffff); */
 
@@ -301,7 +320,10 @@ h1 {
     clip-path: polygon(50% 30%, 0% 0%, 100% 0%);
     background: conic-gradient(#47474715, #78787818);
     /* animation: pulseShadow2 5s infinite; */
-    filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.623))
+    filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.623));
+    pointer-events: none;
+
+
 }
 
 @keyframes pulseShadow {
@@ -435,7 +457,7 @@ h1 {
     transform-style: preserve-3d;
 
     overflow: visible !important;
-
+    pointer-events: none;
 }
 
 .pyramid-loader.clicked {
@@ -521,54 +543,8 @@ h1 {
 .pyramid-loader .wrapper .side4 {
     transform: rotateX(30deg);
     cursor: pointer;
+    pointer-events: all;
 }
-
-/* .lines {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0%;
-    right: 0;
-    height: 100vh;
-    margin: auto;
-    width: 100vw;
-
-}
-
-.linesTop {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0%;
-    right: 0;
-    height: 100vh;
-    margin: auto;
-    width: 70vw;
-}
-
-.linesTopright {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0%;
-    right: 0;
-    height: 100vh;
-    margin: auto;
-    width: 70vw;
-}
-
-.lineTopright {
-    position: absolute;
-
-    width: 10px;
-    height: 100%;
-
-    bottom: 49.5%;
-    left: 39.5%;
-    background: rgba(255, 255, 255, 0);
-    overflow: hidden;
-    transform: rotateZ(-90deg);
-} */
 
 #work-container::after {
     content: '';
@@ -596,48 +572,36 @@ h1 {
     /* Make it click-through */
 }
 
-/* .lineTop {
+.scroll-progress-bar {
+    content: "";
+    height: 0.8%;
+    /* Adjust the height as needed */
+    background-color: #fefeff;
+    /* Change the color as needed */
+    width: 0;
+    /* Initial width, will be updated by JavaScript */
     position: absolute;
-
-    width: 10px;
-    height: 100%;
-
-    bottom: 49.5%;
-    left: 31.1%;
-    background: rgba(255, 255, 255, 0);
-    overflow: hidden;
-    transform: rotateZ(90deg);
+    /* Fixed position to keep it at the top of the viewport */
+    bottom: 0.5%;
+    left: 0.5%;
+    z-index: 2;
+    border-radius: 20%;
+    pointer-events: none;
+    /* Ensure it's above other content */
 }
 
-.lineTop::after {
-    content: '';
-    display: block;
+#scroll-progress-text {
+    font-size: xx-large;
+    color: white;
+    font-family: paragraph;
     position: absolute;
-    height: 120vh;
-    width: 100%;
-    top: -70%;
-    left: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 75%, #ffffff00 100%);
-
-    animation-timing-function: cubic-bezier(0.4, 0, 0, 0);
-
+    z-index: 2;
+    bottom: 10px;
+    left: 0.5%;
+    background-color: rgba(0, 0, 0, 0.452);
+    border-radius: 50%;
+    filter: drop-shadow(0px 0rem 0.1rem #ffffff);
 }
-
-.line:nth-child(1) {
-    margin-left: -50%;
-
-}
-
-.line:nth-child(2) {
-    display: none;
-
-}
-
-
-.line:nth-child(3) {
-    margin-left: 50%;
-
-} */
 
 @keyframes drop {
     0% {
@@ -681,10 +645,6 @@ h1 {
     .p1 {
         margin-top: 45%;
     }
-
-
-
-
 
 }
 
