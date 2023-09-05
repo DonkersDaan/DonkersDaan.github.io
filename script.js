@@ -177,7 +177,7 @@ function getPageText(buttonIndex) {
         case '1':
             ARBook();
             header.innerHTML = "AR-Photobook";
-            return "<b>What is it?</b><br>An AR Photobook with personalised minigames and messages for my girlfriend, made in Unity with ARCore, and Vuforia.<br><br><b>The story</b><br>This photobook is no ordinary book. It contains 4 special pictures, that each have a 'hidden star'. Each star represents a memory I hold dear with my girlfriend. Moreover, each star has a fitting minigame that unlocks a special thanks from me to her after completion. <br><br><b>Why this book?</b><br>My girlfriend likes photography. Her favorite song is 'Yellow' from Coldplay. And I want to show in 4 sentences how much I appreciate her. Together with my Unity skills and creative mind, I wanted to do something special for our 2nd anniversary.<br><br><i>Hover over the video to pause.</i>";
+            return "<b>What is it?</b><br>An AR Photobook with personalised minigames and messages for my girlfriend, made in Unity with ARCore, and Vuforia.<br><br><b>The story</b><br>This photobook is no ordinary book. It contains 4 special pictures, that each have a 'hidden star'. Each star represents a memory I hold dear with my girlfriend. Moreover, each star has a fitting minigame that unlocks a special thanks from me to her after completion. <br><br><b>Why this book?</b><br>My girlfriend likes photography. Her favorite song is 'Yellow' from Coldplay. And I want to show in 4 sentences how much I appreciate her. Together with my Unity skills and creative mind, I wanted to do something special for our 2nd anniversary.<br><br><i>Hover over the video to play.</i>";
         case '2':
             changeDefence();
             header.innerHTML = "Autism Experience Game";
@@ -315,7 +315,7 @@ function preloadVideo() {
     video.load(); // This will start loading the video
 
     // Set a poster image as a placeholder
-    // video.poster = "./BestProjects/tafels.png";
+    video.poster = "./Hobby/BenteDaanCover.png";
 
     // const imagesWithLoading = document.querySelectorAll('image[loading="lazy"]');
 
@@ -325,7 +325,7 @@ function preloadVideo() {
             images.forEach((image) => {
                 image.removeAttribute('loading');
             });
-        }, 7000);
+        }, 5000);
     });
 
     video.addEventListener("mouseover", function () {
@@ -347,7 +347,7 @@ function ARBook() {
     scrollProgressText.style.display = "none";
     videoYT.src = "";
     media.style.justifyContent = "center";
-    media.style.alignItems = "center";
+    media.style.alignItems = "end";
     media.style.flexDirection = "";
     media.style.flexWrap = "";
 
@@ -359,18 +359,18 @@ function ARBook() {
     video.src = "./Hobby/BenteDaanVid1.mp4";
     video.style.display = "initial";
 
-    video.play();
+    // video.play();
     video.loop = true;
     // Once the video is loaded, play it
     // video.oncanplaythrough = function () {
 
     // };
     video.addEventListener("mouseover", function () {
-        video.pause();
+        video.play();
     });
 
     video.addEventListener("mouseleave", function () {
-        video.play();
+        video.pause();
     });
 }
 

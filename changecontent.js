@@ -1,5 +1,6 @@
 //Pyramid change color
 const overlay = document.getElementById("overlay");
+const prismText = document.getElementById("ClickPrismText");
 
 const pyramidLoader = document.querySelector('.pyramid-loader');
 const pyramidSides = document.querySelector('.side4');
@@ -9,14 +10,15 @@ let turnCounter = 0;
 let currentColor = "#272222"; // Initial background color
 
 const rainbowColors = [
+    "#272222",
     "#770000",   // Darker Red
     "#773600",   // Darker Orange
     "#776100",   // Adjusted Yellow
     "#0a7700",   // Darker Green
     "#003477",   // Darker Blue
     "#380077",   // Darker Indigo
-    "#630077",   // Darker Violet
-    "#272222"    // Darker Grey Color
+    "#630077"   // Darker Violet
+    // Darker Grey Color
 ];
 
 
@@ -33,15 +35,19 @@ let fadeOut = setInterval(3000);
 
 
 pyramidSides.addEventListener("mouseover", () => {
-    overlay.style.display = 'block';
-    clearInterval(fadeOut);
-    overlayActive();
+    if (turnCounter > 0) {
+        overlay.style.display = 'block';
+        clearInterval(fadeOut);
+        overlayActive();
+    }
 
 });
 
 pyramidSides.addEventListener("mouseleave", () => {
-    clearInterval(fadeIn);
-    overlayInactive();
+    if (turnCounter > 0) {
+        clearInterval(fadeIn);
+        overlayInactive();
+    }
 });
 
 function overlayActive() {
@@ -73,6 +79,8 @@ pyramidSides.addEventListener("mousemove", (e) => {
 });
 
 pyramidSides.addEventListener('click', () => {
+    turnCounter = 1;
+    prismText.style.display = "none";
     pyramidLoader.classList.remove('jump');
     clearInterval(fadeIn);
     clearInterval(fadeOut);
