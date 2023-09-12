@@ -32,9 +32,12 @@ body {
     justify-content: center;
     touch-action: none;
 
-
-
 }
+
+#mobile-container {
+    display: none;
+}
+
 
 .triangle-right {
     width: 0;
@@ -248,7 +251,7 @@ body {
     display: none;
     position: relative;
 
-    z-index: 15;
+    z-index: 2;
 }
 
 .p1 {
@@ -293,7 +296,6 @@ h1 {
     overflow: hidden;
 
     /* filter: drop-shadow(5px -5px 3px #ffffff); */
-
 
 
 }
@@ -349,7 +351,7 @@ h1 {
     top: 2.5%;
 
 
-    z-index: 6;
+    z-index: 8;
     /* Add your desired clip-path and background */
     clip-path: polygon(50% 30%, 0% 0%, 100% 0%);
     background: conic-gradient(#47474715, #78787818);
@@ -406,7 +408,8 @@ h1 {
 
     position: inherit;
     top: 5%;
-    z-index: 5;
+
+    z-index: 8;
     /* transition: transform 3.3s ease; */
     animation: dummy 0.01s alternate infinite;
 
@@ -474,18 +477,23 @@ h1 {
     color: #000000be;
     background-color: rgba(0, 0, 0, 0);
     /* clip-path: polygon(50% 100%, 0% 0%, 100% 0%); */
-    height: fit-content;
-    width: fit-content;
+    /* height: fit-content; */
     font-size: 1.2rem;
     opacity: 1;
     filter: drop-shadow(0px 0rem 0.1rem #ffffff);
     font-family: Paragraph;
+    transition: all 0.1s;
+
+    /* Firefox: */
+    width: -moz-fit-content;
+    width: fit-content;
+
 }
 
 
 
 .wrapper {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
@@ -752,3 +760,103 @@ h1 {
 
     }
 }
+
+/* Media query for screens with height > width */
+/* @media screen and (orientation: portrait) {
+
+    #work-container {
+        display: none;
+    }
+
+    #mobile-container {
+        display: inline;
+    }
+
+    .pyramid-loader .wrapper {
+
+        right: 50%;
+
+
+    }
+
+    .p1 {
+        font-size: x-small;
+    }
+
+    h1 {
+        font-size: large;
+
+    }
+
+    #pyramid-container {
+        overflow: visible !important;
+        display: flex;
+        justify-content: center;
+
+        height: 100vh;
+
+        width: 30vw;
+        position: absolute;
+
+        top: 1%;
+
+
+        z-index: 8;
+   
+        clip-path: polygon(50% 120px, 0% 0%, 100% 0%);
+        background: conic-gradient(#47474715, #78787818);
+
+        filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.623));
+        pointer-events: none;
+
+
+    }
+
+    .pyramid-loader {
+
+        width: 100px;
+        height: 100px;
+
+    }
+
+
+    .image {
+
+        margin-top: 5%;
+        top: 0%;
+        z-index: 2;
+
+    }
+
+    #button-container {
+        height: 50vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: end;
+        flex-direction: column;
+        position: absolute;
+        top: 0%;
+        z-index: 1;
+
+    }
+
+    .button {
+   
+        border: none;
+        color: #000000be;
+        background-color: rgba(0, 0, 0, 0);
+
+        font-size: 1.2rem;
+        opacity: 1;
+        filter: drop-shadow(0px 0rem 0.1rem #ffffff);
+        font-family: Paragraph;
+        transition: all 0.1s;
+
+        width: -moz-fit-content;
+        width: fit-content;
+
+
+    }
+
+} */
