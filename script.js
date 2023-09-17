@@ -1,6 +1,7 @@
-let bente = false;
+// let bente = false;
 var textRight = document.querySelector(".p1");
 var header = document.getElementById("header");
+const headerClass = document.querySelectorAll('.header');
 
 var images = document.querySelectorAll(".image");
 var video = document.querySelector(".video");
@@ -194,27 +195,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const texthome = document.getElementById("phome").innerHTML;
+
+    textBoxes = document.querySelectorAll('.textboxes');
+    hoverText = document.querySelectorAll('.reveal');
+    hoverText2 = document.querySelectorAll('.reveal2');
+    hoverText3 = document.querySelectorAll('.reveal3');
+
+
+
     // Function to get corresponding text for each button index
     function getPageText(buttonIndex) {
         switch (buttonIndex) {
             case '0':
-
+                textBoxes[0].style.display = "flex";
+                textBoxes[1].style.display = "none";
+                textBoxes[2].style.display = "none";
+                textBoxes[3].style.display = "none";
+                textBoxes[4].style.display = "none";
                 changeHome();
-                header.innerHTML = "Welcome!";
-                return "My name is Daan Donkers, and I'm a junior Interaction Designer with a very broad interest in the media & tech world! Please take a look at some of my work!<br><br>If you want to know more about my work, or just anything else, feel free to contact me!<br><br><u>Email</u>: daan.donkers@hotmail.nl<br><br>* <b>Specialization</b>: Game Design & Technology<br>* <b>Minor</b>: Transmedia Design & Storytelling<br><br><br><br><i>If you click on the prism, the background color will change. Change it according to your liking.</i>";
+                return texthome;
+
             case '1':
+                textBoxes[0].style.display = "none";
+                textBoxes[1].style.display = "flex";
+                textBoxes[2].style.display = "none";
+                textBoxes[3].style.display = "none";
+                textBoxes[4].style.display = "none";
                 ARBook();
-                header.innerHTML = "AR-Photobook";
-                return "<b>What is it?</b><br>An AR Photobook with personalised minigames and messages for my girlfriend, made in Unity with ARCore, and Vuforia.<br><br><b>The story</b><br>This photobook is no ordinary book. It contains 4 special pictures, that each have a 'hidden star'. Each star represents a memory I hold dear with my girlfriend. Moreover, each star has a fitting minigame that unlocks a special thanks from me to her after completion. <br><br><b>Why this book?</b><br>My girlfriend likes photography. Her favorite song is 'Yellow' from Coldplay. And I want to show in 4 sentences how much I appreciate her. Together with my Unity skills and creative mind, I wanted to do something special for our 2nd anniversary.<br><br><i>Hover over the video to play.</i>";
+                return;
             case '2':
+                textBoxes[0].style.display = "none";
+                textBoxes[1].style.display = "none";
+                textBoxes[2].style.display = "flex";
+                textBoxes[3].style.display = "none";
+                textBoxes[4].style.display = "none";
                 changeDefence();
-                header.innerHTML = "Autism Experience Game";
-                return "<i><b>Scroll</b>, and <b>hover</b> over an image to show what it is about.</i>";
+                return;
             case '3':
+                textBoxes[0].style.display = "none";
+                textBoxes[1].style.display = "none";
+                textBoxes[2].style.display = "none";
+                textBoxes[3].style.display = "flex";
+                textBoxes[4].style.display = "none";
                 changeGAG();
-                header.innerHTML = "Gamble against God";
-                return "<i><b>Scroll</b>, and <b>hover</b> over an image to show what it is about.</i>";
+                return;
             case '4':
+                textBoxes[0].style.display = "none";
+                textBoxes[1].style.display = "none";
+                textBoxes[2].style.display = "none";
+                textBoxes[3].style.display = "none";
+                textBoxes[4].style.display = "flex";
                 Others();
                 return "To the left are some other school and passion projects<br><i><b>Scroll</b>, and <b>hover</b> over an image to show what it is about.</i>";
             default:
@@ -244,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 image.style.display = "none"; // Deactivate other images
             }
         });
-    }
+    };
 
     function changeDefence() {
         scrollProgressLeft.style.display = "inline";
@@ -255,37 +286,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
         images.forEach((image, index) => {
             if (index >= 1 && index <= 7) {
-                image.style.display = "inline"; // Activate the second image
-                // image.classList.add("scrollindication");
+                image.style.display = "inline";
 
                 image.addEventListener("mouseover", () => {
-                    textRight.innerHTML = getImageText(index, 'defence');
-                    // images.forEach((img) => {
-                    //     img.classList.remove("scrollindication");
-                    // })
-                });
+                    for (let i = 0; i < hoverText.length; i++) {
+                        hoverText[i].style.display = i === index ? 'block' : 'none';
+                        // hoverText[1].style.marginTop = '25vh';
+                    }
 
-                image.addEventListener("mouseleave", () => {
-                    textRight.innerHTML = "<i><b>Scroll</b>, and <b>hover</b> over an image to show what it is about.</i>";
-                });
+                    if (window.innerWidth < 1675) {
+                        headerClass[3].style.marginTop = '17vh';
+                    }
 
+                });
             } else {
-                image.style.display = "none"; // Deactivate other images
+                image.style.display = "none";
             }
 
-            // text.addEventListener("mouseover", () => {
-            //     image.classList.add("scrollindication");
-            // });
+            image.addEventListener("mouseleave", () => {
+                headerClass[3].style.marginTop = '0vh';
 
+                for (let i = 1; i < hoverText.length; i++) {
+                    hoverText[i].style.display = 'none';
+                }
+                hoverText[0].style.display = 'block';
+            });
         });
 
         media.style.justifyContent = "";
         media.style.alignItems = "flex-start";
         media.style.flexDirection = "row";
-        media.style.flexWrap = "wrap"; // Allow images to wrap to the next row
-
-
+        media.style.flexWrap = "wrap";
     }
+
 
     // Function to get corresponding text for each image
 
@@ -298,23 +331,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         images.forEach((image, index) => {
             if (index >= 8 && index <= 11) {
-                image.style.display = "inline"; // Activate the second image
-                // image.classList.add("scrollindication");
+                image.style.display = "inline";
+
+                const hoverTextIndex = index - 7;
 
                 image.addEventListener("mouseover", () => {
-                    textRight.innerHTML = getImageText(index, 'GAG');
-                    // images.forEach((img) => {
-                    //     img.classList.remove("scrollindication");
-                    //     console.log("Hovering over image", index);
-                    // })
+                    hoverText2.forEach((text, i) => {
+                        text.style.display = i === hoverTextIndex ? 'block' : 'none';
+                    });
+
+
+                    if (window.innerWidth < 1600) {
+                        headerClass[4].style.marginTop = '16vh';
+                    }
                 });
 
                 image.addEventListener("mouseleave", () => {
-                    textRight.innerHTML = "<i><b>Scroll</b>, and <b>hover</b> over an image to show what it is about.</i>";
+                    headerClass[4].style.marginTop = '0vh';
+                    hoverText2.forEach((text, i) => {
+                        text.style.display = i === 0 ? 'block' : 'none';
+                    });
                 });
 
             } else {
-                image.style.display = "none"; // Deactivate other images
+                image.style.display = "none";
             }
 
         });
@@ -363,25 +403,56 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollProgressLeft.style.display = "inline";
         scrollProgressText.style.display = "inline";
         videoYT.src = "https://www.youtube.com/embed/T9aBYG3P2CE?si=pm_LdUQhw4h2iTyF";
-        header.innerHTML = "Other";
-        textRight.innerHTML = "";
 
         images.forEach((image, index) => {
             if (index >= 12 && index <= 16) {
                 image.style.display = "inline";
                 image.style.width = "45%";
-                // image.classList.add("scrollindication");
+
+                const hoverTextIndex = index - 11;
+
                 image.addEventListener("mouseover", () => {
-                    textRight.innerHTML = getImageText(index, 'other');
-                    // images.forEach((img) => {
-                    //     img.classList.remove("scrollindication");
-                    //     console.log("Hovering over image", index);
-                    // })
+                    switch (hoverTextIndex) {
+                        case 1:
+                            hoverText3.forEach((text, i) => {
+                                text.style.display = i === 1 ? 'block' : 'none';
+                            });
+
+                            images[12].addEventListener("click", () => {
+                                window.open('https://www.redbubble.com/people/DD-sign/shop?asc=u&ref=account-nav-dropdown', '_blank');
+                            });
+                            break;
+
+                        case 2:
+                            hoverText3.forEach((text, i) => {
+                                text.style.display = i === 2 ? 'block' : 'none';
+                            });
+
+                            break;
+
+                        case 3:
+                        case 4:
+                            hoverText3.forEach((text, i) => {
+                                text.style.display = i === 3 ? 'block' : 'none';
+                            });
+
+                            break;
+
+                        case 5:
+                            hoverText3.forEach((text, i) => {
+                                text.style.display = i === 4 ? 'block' : 'none';
+                            });
+
+                            break;
+                        default:
+                            break;
+                    }
                 });
 
                 image.addEventListener("mouseleave", () => {
-                    header.innerHTML = "Other";
-                    textRight.innerHTML = "To the left are some other school and passion projects<br><i><b>Scroll</b>, and <b>hover</b> over an image to show what it is about.</i>";
+                    hoverText3.forEach((text, i) => {
+                        text.style.display = i === 0 ? 'block' : 'none';
+                    });
                 });
 
             } else {
@@ -392,78 +463,10 @@ document.addEventListener('DOMContentLoaded', () => {
         media.style.justifyContent = "";
         media.style.alignItems = "flex-start";
         media.style.flexDirection = "row";
-        media.style.flexWrap = "wrap"; // Allow images to wrap to the next row
+        media.style.flexWrap = "wrap";
 
         video.src = "";
         video.style.display = "none";
-
     }
 
-    // Function to get corresponding text for each image
-    function getImageText(index, category) {
-        switch (category) {
-            case 'defence':
-                switch (index) {
-                    // case 0:
-                    //     return "My name is Daan Donkers, and I'm a junior Interaction Designer with a very broad interest in the media & tech world! Please take a look at some of my work!<br><br>If you want to know more about my work, or just anything else, feel free to contact me!<br><br><u>Email</u>: daan.donkers@hotmail.nl<br><br>* <b>Specialization</b>: Game Design & Technology<br>* <b>Minor</b>: Transmedia Design & Storytelling<br><br><br><br><i>If you click on the prism, the background color will change. Change it according to your liking.</i>";
-                    case 1:
-                        return "<b>What is it?</b><br>A WebGL game in which the user experiences multiple different situations, through the eyes of different people with autism. The game is based on the stories and experiences of a variety of Defence personnel with autism. It is made in Unity and used by our military.<br><br><b>The story</b><br>The Autism Experience Game is a discovery game focused on the differences in perception between people with and without autism. Play unique scenarios that allow you to experience the contrast between those two worlds. Reflect on your experiences, and learn how to navigate them.<br><br><b>Why this game?</b><br>People with autism are at a high risk of experiencing burnout, depression, and workplace absenteeism. Communication problems (partly caused by a misunderstanding of autism) can lead to conflicts at work. Colleagues with autism within the military often feel misunderstood. Their peers express that they do not know how to handle certain situations.<br><br><b>After completion</b><br>The game was a succes, and caused for many collegues to have a better understanding on the strenghts and difficulties autism can give someone, but also on how to put those strenghts to good use. The game also helped some people with autism to better talk about their insecurities or problems, and it even played a role in getting our Ministry of Defence its own Autism Embassy.<br><br><b>My competences</b> (first internship)<br>* Concept developer<br>* UX + UI Designer/ Developer<br>* Researcher<br>* Lead<br><br>";
-                    case 2:
-                        return "Home menu. Choose a scenario.";
-                    case 3:
-                        return "Play as someone with autism. You have no controle over the situation. This is due to internal, and external factors that make it almost impossible for the player to play the game correctly.";
-                    case 4:
-                        return "There is no right answer to questions that come your way.";
-                    case 5:
-                        return "You learned from the stressfull experience(s) by playing the game in his or her shoes.";
-                    case 6:
-                        return "You know what you need, to make the situation work for you.";
-                    case 7:
-                        return "You reflect on the experience and learn about the strengths and weaknesses of your collegue with autism.";
-                    default:
-                        return "";
-                }
-            case 'GAG':
-                switch (index) {
-                    case 8:
-                        return "<b>What is it?</b><br>A team-based multimedia game in which you gamble with our climate, by making everyday decisions. The goal is to polute and destroy our Earth as fast as possible, by playing 4 different climate-related games.<br>The game consists of physical props, minigames on a tablet, and animations + videofragments on a big screen.<br><br><b>The story</b><br>The players enter a room in which multiple poker-like tables are placed. In teams of 5, they gamble with emmission-coins and try to destroy the Earth as a team. The team who has the most emmision-coins at the end of the game, wins.<br><br><b>Why this game?</b><br>It is a unique approach in the attempt to get the holy grail: long-term behavioural change. My research showed that creating awareness by learning from our everyday harmfull behaviour, actually shocked some testers of the game-MVP. The game triggers you to do the wrong thing, by overstimulating you with rewards (emmission-coins), light and casino-sounds. It serves an important role and has a methaphorical connection to our way of living, as in an addiction. The game starts fun and relatively fast-pased (higly rewarding), but ends in a state where the players get confronted with the consequences of their actions.<br><br><b>After completion</b><br>I finished my ICT education with honors, and my manager was happy with the results. The game was partually delivered as an MPV and prototype.<br><br><b>My competences</b> (final internship)<br>* Concept developer<br>* UX + UI Designer/ Developer<br>* Researcher<br>* Lead<br><br>";
-                    case 9:
-                        return "A sketch of how the room would look like.";
-                    case 10:
-                        return "An sketch of the poker-table. Each poker-table has a Windows-tablet, for playing casino-like minigames.";
-                    case 11:
-                        return "A sketch of the table-system that detects casino-playcards (RFID), it is installed underneath the poker table. Each card unlocks a special minigame, after one of 4 main-games is completed. With this minigame, you can score even more emission-points. I made the system and implemented it into the game, with Arduino IDE and Unity.";
-                    default:
-                        return "";
-                }
-            case 'other':
-                switch (index) {
-                    case 12:
-                        images[12].addEventListener("click", () => {
-                            window.open('https://www.redbubble.com/people/DD-sign/shop?asc=u&ref=account-nav-dropdown', '_blank');
-                        });
-                        header.innerHTML = "RedBubble";
-                        return "One of a couple drawings I made for Redbubble.<br><i>Click the image to view my old RedBubble store</i>";
-                    case 13:
-                        header.innerHTML = "BottleStop";
-                        return "Bottle Stop was a project done with a five-man team in the second semester: two starting designers (me as well) and three starting technology students. Bottle Stop was created by us, with our mission to reduce plastic waste around the globe.<br><br>We designed bottles with RFID chips on the bottom, that are read by Bottle Stop stations. Only with this reusable bottle, you can buy your favourite drinks or water, at these unmanned stations.<br><br>With our project, we reached the semi-finals of the ICTalent Awards. We even got Paaspop interested in foldable cups with RFID chips and unmanned stations. But because of COVID, the Talent-Awards and our ideas around Paaspop got scrapped off the agenda and we couldn't continue anymore.<br><br>My competences:<br>- CO-Creator<br>- Website designer/developer<br>- UI Designer<br>- Video storyboard designer<br>- Pitcher";
-                    // case 14:
-                    //     return "Text for image 5";
-                    // case 15:
-                    //     return "Text for image 6";
-                    case 14:
-                        header.innerHTML = "Salve Mundi";
-                        return "The student association (Salve Mundi) mascot Owl for a bar-shirt design, made for Hubble.";
-                    case 15:
-                        header.innerHTML = "Salve Mundi";
-                        return "The student association (Salve Mundi) mascot Owl for a bar-shirt design, made for Hubble.";
-                    case 16:
-                        header.innerHTML = "Salve Mundi";
-                        return "The Salve Mundi Owl for a banner design.";
-                    default:
-                        return "";
-                }
-        }
-
-    }
 });

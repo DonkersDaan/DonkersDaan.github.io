@@ -1,6 +1,3 @@
-// const media = document.getElementById('my-work-left');
-// const text = document.getElementById('my-work-right');
-
 let isScrolling = false;
 
 function syncScroll(event) {
@@ -50,3 +47,9 @@ media.addEventListener('scroll', () => {
     updateProgressBar(media, scrollProgressLeft, scrollProgressText);
 });
 
+function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+}
