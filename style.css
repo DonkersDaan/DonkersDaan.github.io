@@ -768,6 +768,10 @@ body {
         margin: 0px 0px 0px 82px;
 
     }
+
+    .button {
+        font-size: 0.9rem;
+    }
 }
 
 @media only screen and (max-width: 1600px) {
@@ -790,6 +794,10 @@ body {
     .textboxes {
         margin-top: 15vh;
         font-size: x-small;
+    }
+
+    .button {
+        font-size: 0.7rem;
     }
 
     .wrapper {
@@ -825,17 +833,7 @@ body {
     }
 
     .button {
-        border: none;
-        color: #000000be;
-        background-color: rgba(0, 0, 0, 0);
         font-size: 0.5rem;
-        opacity: 1;
-        filter: drop-shadow(0px 0rem 0.1rem #ffffff);
-        font-family: Paragraph;
-        transition: all 0.1s;
-        width: -moz-fit-content;
-        width: fit-content;
-
     }
 
     .wrapper {
