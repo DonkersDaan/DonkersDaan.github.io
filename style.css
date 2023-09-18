@@ -204,7 +204,44 @@ body {
     left: 1%;
     bottom: 2%;
     filter: drop-shadow(-4px 5px 8px #ffffff46);
+    transform: perspective(1000px) rotateX(5deg) rotateY(-15deg) scale(0.6);
+    opacity: 0;
+    pointer-events: none;
 
+}
+
+#left.loadAnimation {
+    animation: loadanimation 1.5s 1s ease-in-out forwards;
+    /* transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    transform: perspective(1000px) rotate(0deg) scale(1);
+    pointer-events: none; */
+}
+
+#right.loadAnimation {
+    animation: loadanimation 1.5s 1s ease-in-out forwards;
+
+}
+
+@keyframes loadanimation {
+    0% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
+        transform: perspective(1000px) scale(1.02);
+
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: perspective(1000px) rotate(0deg) scale(1);
+        pointer-events: all;
+
+    }
 }
 
 #right {
@@ -217,7 +254,9 @@ body {
     left: 49%;
     bottom: 2%;
     filter: drop-shadow(4px 5px 8px #ffffff46);
-
+    transform: perspective(1000px) rotateX(5deg) rotateY(15deg) scale(0.6);
+    opacity: 0;
+    pointer-events: none;
 }
 
 #my-work-left {
@@ -443,7 +482,7 @@ body {
     }
 
     25% {
-        filter: drop-shadow(2rem 1.5rem 3.65rem rgb(255, 255, 255));
+        filter: drop-shadow(2rem 1.5rem 2.65rem rgb(102, 102, 102));
     }
 
     50% {
@@ -451,7 +490,7 @@ body {
     }
 
     75% {
-        filter: drop-shadow(-2rem 0.5rem 5.5rem rgb(255, 255, 255));
+        filter: drop-shadow(-2rem 0.5rem 5.5rem rgb(156, 156, 156));
     }
 
     100% {
@@ -526,7 +565,7 @@ body {
     transform-origin: center bottom;
     clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
     background: rgba(255, 255, 255, 0.35);
-    animation: pulseShadow 6s linear infinite;
+    animation: pulseShadow 6s ease-in-out infinite;
 }
 
 .pyramid-loader .wrapper .side1 {
@@ -619,7 +658,12 @@ body {
     position: absolute;
     top: 40%;
     z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
 
+#button-container.loadAnimation {
+    animation: loadanimation 1s 3s ease-out forwards;
 }
 
 .button {
@@ -769,6 +813,46 @@ body {
         font-size: 0.7rem;
     }
 } */
+
+@media only screen and (max-width: 1000px) {
+    .p1 {
+        font-size: 0.4rem;
+    }
+
+    .textboxes {
+        margin-top: 15vh;
+        font-size: 0.4rem;
+    }
+
+    .button {
+        border: none;
+        color: #000000be;
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0.5rem;
+        opacity: 1;
+        filter: drop-shadow(0px 0rem 0.1rem #ffffff);
+        font-family: Paragraph;
+        transition: all 0.1s;
+        width: -moz-fit-content;
+        width: fit-content;
+
+    }
+
+    .wrapper {
+        position: absolute;
+        top: 5%;
+        width: 30%;
+        height: 30%;
+        transform-style: preserve-3d;
+        overflow: visible !important;
+        pointer-events: none;
+    }
+
+    .pyramid-loader .wrapper .side {
+        margin: 0px 0px 0px 127px;
+
+    }
+}
 
 /* Media query for screens with height > width */
 @media screen and (orientation: portrait) {

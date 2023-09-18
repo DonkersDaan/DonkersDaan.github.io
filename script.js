@@ -13,8 +13,8 @@ const GAG = document.getElementById("Climate");
 const Other = document.getElementById("Other");
 const contact = document.getElementById("contact");
 
-const left = document.getElementById("left");
-const right = document.getElementById("right");
+left = document.getElementById("left");
+right = document.getElementById("right");
 
 text = document.getElementById("my-work-right");
 media = document.getElementById("my-work-left");

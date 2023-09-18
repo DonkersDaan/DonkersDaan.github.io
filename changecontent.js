@@ -1,6 +1,7 @@
 //Pyramid change color
 const overlay = document.getElementById("overlay");
 const prismText = document.getElementById("ClickPrismText");
+const buttoncontainer = document.getElementById("button-container");
 
 const pyramidLoader = document.querySelector('.pyramid-loader');
 const wrapp = document.querySelector('.wrapper');
@@ -8,6 +9,7 @@ const pyramidSides = document.querySelector('.side4');
 let isAnimating = false;
 let isChangingColor = false;
 let turnCounter = 0;
+let loadCounter = 0;
 let currentColor = "#272222"; // Initial background color
 
 const rainbowColors = [
@@ -81,6 +83,7 @@ pyramidSides.addEventListener("mousemove", (e) => {
 });
 
 pyramidSides.addEventListener('click', () => {
+
     overlay.style.pointerEvents = "none";
     turnCounter = 1;
     prismText.style.display = "none";
@@ -99,6 +102,10 @@ pyramidSides.addEventListener('click', () => {
         workContainer.classList.add('animation-active');
         setTimeout(() => {
             changeBackgroundColor();
+            if (loadCounter == 0) {
+                triggerLoadAnimation();
+                loadCounter++;
+            }
         }, 500);
 
         setTimeout(() => {
@@ -108,6 +115,12 @@ pyramidSides.addEventListener('click', () => {
         }, 1700);
     }
 });
+
+function triggerLoadAnimation() {
+    left.classList.add('loadAnimation');
+    right.classList.add('loadAnimation');
+    buttoncontainer.classList.add('loadAnimation');
+}
 
 
 function changeBackgroundColor() {
