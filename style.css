@@ -1,11 +1,11 @@
 @font-face {
     font-family: Header;
-    src: url(./Fonts/Major_Mono_Display/MajorMonoDisplay-Regular.ttf);
+    src: url(Fonts/Major_Mono_Display/MajorMonoDisplay-Regular.ttf);
 }
 
 @font-face {
     font-family: Paragraph;
-    src: url(./Fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf);
+    src: url(Fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf);
 }
 
 ::-webkit-scrollbar {
@@ -753,6 +753,17 @@ body {
 
 }
 
+@media only screen and (max-width: 2100px) {
+    .p1 {
+        font-size: 1.2rem;
+    }
+
+    .textboxes {
+        margin-top: 35vh;
+        font-size: large;
+    }
+}
+
 @media only screen and (max-width: 1800px) {
     .wrapper {
         position: absolute;
@@ -776,12 +787,12 @@ body {
 
 @media only screen and (max-width: 1600px) {
     .textboxes {
-        margin-top: 15vh;
+        margin-top: 25vh;
         font-size: small;
     }
 
     .p1 {
-        font-size: 0.8rem;
+        font-size: 1.1rem;
     }
 }
 
