@@ -69,6 +69,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     position: fixed;
     opacity: 1;
     width: 100%;
@@ -79,6 +80,27 @@ body {
     bottom: 0;
     background-color: rgb(0, 0, 0);
     z-index: 5;
+}
+
+.p1Overlay {
+    color: white;
+    font-family: paragraph;
+    font-size: large;
+    opacity: 0;
+    animation: revealClick 1.5s 8s ease-in-out forwards;
+}
+
+@keyframes revealClick {
+    0% {
+        opacity: 0;
+        transform: translateY(-5vh);
+
+    }
+
+    100% {
+        opacity: 100;
+        transform: translateY(0vh);
+    }
 }
 
 #ClickPrismText {
@@ -973,6 +995,14 @@ body {
         margin: 0;
         display: inline-block;
 
+    }
+
+    .p1Overlay {
+        color: white;
+        font-family: paragraph;
+        font-size: small;
+        opacity: 0;
+        animation: revealClick 1.5s 8s ease-in-out forwards;
     }
 
 
