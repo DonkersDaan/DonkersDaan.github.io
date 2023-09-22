@@ -926,6 +926,7 @@ body {
         position: fixed;
         top: 0;
         background-color: white;
+        z-index: 10;
     }
 
     #MCworkContent {
@@ -948,7 +949,7 @@ body {
 
     #MCdaan {
         display: flex;
-        min-height: 100vh !important;
+        min-height: 98vh !important;
         width: 100%;
         /* Make sure it takes full width */
         max-width: 100%;
@@ -961,8 +962,8 @@ body {
 
 
     .daan {
-        width: 50vw;
-        margin-right: 8%;
+        width: 30vw !important;
+        margin-right: 5% !important;
         margin-left: 0 !important;
         margin-bottom: 0 !important;
     }
@@ -974,7 +975,16 @@ body {
         justify-content: center;
         align-items: start;
         flex-direction: column;
-        margin: 1%;
+        margin-left: 1%;
+
+    }
+
+    .MCtextbox .MCp1 {
+        font-size: small;
+        font-family: paragraph;
+        margin: 0;
+        color: white;
+        overflow: hidden;
 
     }
 
@@ -1019,10 +1029,11 @@ body {
     .Header-Button {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         flex-direction: column;
         width: 100vw;
         height: auto;
+        margin-left: 3%;
         /* margin-right: 1vw; */
     }
 
@@ -1059,7 +1070,7 @@ body {
         width: 45vw;
         height: auto;
         border-radius: 1%;
-        margin: 3%;
+        margin: 5%;
 
         /* margin: 5px; */
     }
@@ -1071,6 +1082,7 @@ body {
 
     .MCvideo {
         width: 45vw;
+        margin: 5%;
     }
 
     /* .video {
@@ -1127,14 +1139,14 @@ body {
         font-family: header;
         color: white;
         font-size: small;
-        margin: 4%;
+        /* margin: 4%; */
         /* transform: rotate(360deg); */
         /* margin: 50px; */
     }
 
-    #videoHeader {
+    /* #videoHeader {
         margin-left: 4%;
-    }
+    } */
 
     #MCheaderQuote {
         font-family: header;
