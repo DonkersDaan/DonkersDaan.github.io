@@ -950,11 +950,9 @@ body {
     #MCdaan {
         display: flex;
         /* height: 100vh !important; */
-        min-height: 90vh !important;
+        min-height: 100% !important;
         width: 100%;
-        /* Make sure it takes full width */
         max-width: 100%;
-        /* If you want to limit the width */
     }
 
     #MChomeHeader {
