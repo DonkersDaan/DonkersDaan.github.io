@@ -950,7 +950,7 @@ body {
     #MCdaan {
         display: flex;
         /* height: 100vh !important; */
-        min-height: 98vh !important;
+        min-height: 90vh !important;
         width: 100%;
         /* Make sure it takes full width */
         max-width: 100%;
@@ -964,8 +964,8 @@ body {
 
     .daan {
         width: 40vw !important;
-        margin-right: 0% !important;
-        margin-left: 53% !important;
+        margin-right: 5% !important;
+        margin-left: 0% !important;
         margin-bottom: 0 !important;
     }
 
@@ -977,7 +977,6 @@ body {
         align-items: start;
         flex-direction: column;
         margin-left: 1%;
-        position: fixed;
 
     }
 
