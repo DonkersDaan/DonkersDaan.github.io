@@ -964,19 +964,20 @@ body {
 
     .daan {
         width: 40vw !important;
-        margin-right: 5% !important;
-        margin-left: 0 !important;
+        margin-right: 0% !important;
+        margin-left: 53% !important;
         margin-bottom: 0 !important;
     }
 
     .MCtextbox {
-        height: 100%;
-        width: 100vw;
+        /* height: 100%; */
+        width: 55vw;
         display: flex;
         justify-content: center;
         align-items: start;
         flex-direction: column;
         margin-left: 1%;
+        position: fixed;
 
     }
 
