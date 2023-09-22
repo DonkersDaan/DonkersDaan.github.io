@@ -950,7 +950,7 @@ body {
     #MCdaan {
         display: flex;
         /* height: 100vh !important; */
-        min-height: 85vh !important;
+        min-height: 98vh !important;
         width: 100%;
         /* Make sure it takes full width */
         max-width: 100%;
