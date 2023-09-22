@@ -61,7 +61,7 @@ body {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    position: relative;
+    position: fixed;
 
 }
 
@@ -900,26 +900,39 @@ body {
     }
 
     #mobile-container {
-        /* position: absolute; */
+        position: fixed;
         z-index: 4;
         height: 98vh;
         width: 96vw;
+        /* margin: 2%; */
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(rgba(255, 255, 255, 0.096), rgba(0, 0, 0, 0.486));
+
+        clip-path: polygon(50% 75px, 62% 0, 100% 0, 100% 100%, 0 100%, 0 0, 38% 0);
+
+        overflow-x: hidden;
+        border-radius: 1%;
+        overflow-y: scroll;
+    }
+
+    #scrollLine {
+        /* justify-self: flex-start; */
+        align-self: flex-start;
+        height: 100vh;
+        width: 0.5vw;
+        position: fixed;
+        top: 0;
+        background-color: white;
+    }
+
+    #MCworkContent {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: column;
-
-        /* background: conic-gradient(#47474715, #78787818); */
-        background: linear-gradient(rgba(73, 73, 73, 0.096), rgba(0, 0, 0, 0.486));
-
-        clip-path: polygon(50% 100px, 62% 0, 100% 0, 100% 100%, 0 100%, 0 0, 38% 0);
-
-        overflow-x: hidden;
-        /* 
-        position: fixed;
-        z-index: 1; */
-        border-radius: 1%;
-        overflow-y: scroll;
     }
 
     .MC {
@@ -931,6 +944,38 @@ body {
         width: 100vw;
         background: rgba(255, 255, 255, 0);
         border-bottom: 5px solid #ffffff50;
+    }
+
+    #MCdaan {
+        display: flex;
+        min-height: 100vh !important;
+        width: 100%;
+        /* Make sure it takes full width */
+        max-width: 100%;
+        /* If you want to limit the width */
+    }
+
+    #MChomeHeader {
+        font-size: large;
+    }
+
+
+    .daan {
+        width: 50vw;
+        margin-right: 8%;
+        margin-left: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .MCtextbox {
+        height: 100%;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        margin: 1%;
+
     }
 
     .MCOthers {
@@ -1003,16 +1048,6 @@ body {
 
     }
 
-    .MCtextbox {
-        height: 100%;
-        width: 50vw;
-        display: flex;
-        justify-content: center;
-        align-items: start;
-        flex-direction: column;
-        margin: 1%;
-    }
-
     .MCimages {
         display: flex;
         justify-content: center;
@@ -1032,14 +1067,6 @@ body {
     .ImageGrow {
         width: 80vw;
         transition: all 1s;
-    }
-
-
-    .daan {
-        width: 30vw;
-        margin-right: 8%;
-        margin-left: 0;
-        margin-bottom: 0;
     }
 
     .MCvideo {
