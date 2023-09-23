@@ -100,6 +100,7 @@ pyramidSides.addEventListener('click', () => {
 
         isChangingColor = true;
         workContainer.classList.add('animation-active');
+        MCContainer.classList.add('animation-active');
         setTimeout(() => {
             changeBackgroundColor();
             if (loadCounter == 0) {
@@ -112,6 +113,8 @@ pyramidSides.addEventListener('click', () => {
             pyramidLoader.classList.remove('clicked');
             isAnimating = false;
             workContainer.classList.remove('animation-active');
+            MCContainer.classList.remove('animation-active');
+
         }, 1700);
     }
 });

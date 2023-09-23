@@ -1,4 +1,5 @@
 var MC = document.querySelectorAll('.MC');
+MCContainer = document.getElementById("mobile-container");
 const videoDiv = document.querySelector('.MCvideo');
 const mcImage = document.querySelectorAll('.MCimage');
 const ARtext = document.getElementById('ARtext');
