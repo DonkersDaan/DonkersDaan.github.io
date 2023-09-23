@@ -921,7 +921,7 @@ body {
     #mobile-container::after {
         content: '';
         display: block;
-        position: absolute;
+        position: fixed;
         height: 100vh;
         width: 100vw;
         top: 0%;
@@ -933,11 +933,11 @@ body {
 
     @keyframes drop2 {
         0% {
-            top: -100%;
+            top: -100vh;
         }
 
         100% {
-            top: 200%;
+            top: 200vh;
         }
 
     }
