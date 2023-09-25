@@ -15,14 +15,14 @@ buttonNav.forEach((button, index) => {
     button.addEventListener('click', () => {
         if (index == 0) {
             button.innerHTML = (button.innerHTML === 'Reveal') ? 'Close' : 'Reveal';
-            MC[1].scrollIntoView({ behavior: 'smooth' });
+            MC[1].scrollIntoView({ behavior: 'smooth', block: 'start' });
             MC[1].classList.toggle('MCClick');
             videoDiv.classList.toggle('video');
             ARtext.style.display = (ARtext.style.display === 'none') ? 'inline-block' : 'none';
         }
         if (index == 1) {
             button.innerHTML = (button.innerHTML === 'Reveal') ? 'Close' : 'Reveal';
-            MC[2].scrollIntoView({ behavior: 'smooth' });
+            MC[2].scrollIntoView({ behavior: 'smooth', block: 'start' });
             MC[2].classList.toggle('MCClick');
             mcImage[1].classList.toggle('ImageGrow');
 
@@ -37,7 +37,7 @@ buttonNav.forEach((button, index) => {
         }
         if (index == 2) {
             button.innerHTML = (button.innerHTML === 'Reveal') ? 'Close' : 'Reveal';
-            MC[3].scrollIntoView({ behavior: 'smooth' });
+            MC[3].scrollIntoView({ behavior: 'smooth', block: 'start' });
             MC[3].classList.toggle('MCClick');
             mcImage[8].classList.toggle('ImageGrow');
 
