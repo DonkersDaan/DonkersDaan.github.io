@@ -897,24 +897,25 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+
     }
 
     #mobile-container {
         position: fixed;
         z-index: 4;
-        height: 98vh;
-        width: 96vw;
+        height: 100vh;
+        width: 100vw;
         /* margin: 2%; */
         display: flex;
         /* justify-content: space-between; */
         align-items: center;
         flex-direction: column;
-        background: linear-gradient(rgba(255, 255, 255, 0.096), rgba(0, 0, 0, 0.486));
+        /* background: linear-gradient(rgba(255, 255, 255, 0.096), rgba(0, 0, 0, 0.486)); */
 
-        clip-path: polygon(50% 75px, 62% 0, 100% 0, 100% 100%, 0 100%, 0 0, 38% 0);
+        clip-path: polygon(50% 75px, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0, 35% 0);
 
         overflow-x: hidden;
-        border-radius: 1%;
+        /* border-radius: 1%; */
         overflow-y: scroll;
     }
 
@@ -955,11 +956,43 @@ body {
         z-index: 10;
     }
 
+    #scrollIndication {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        bottom: 5%;
+        width: 5%;
+        height: 8%;
+        border-radius: 45%;
+        border: 2px solid #ffffff50;
+    }
+
+    #scrollSphere {
+        position: relative;
+        width: 50%;
+        height: 20%;
+        background-color: white;
+        border-radius: 50%;
+        animation: scrollIndication 3s infinite ease-in-out;
+    }
+
+    @keyframes scrollIndication {
+        0% {
+            top: 0;
+        }
+
+        25% {
+            top: 80%;
+        }
+    }
+
+
     #MCworkContent {
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         align-items: center;
         flex-direction: column;
+        margin-top: 5%;
     }
 
     .MC {
@@ -968,17 +1001,31 @@ body {
         align-items: center;
         flex-direction: row;
         height: fit-content;
-        width: 100vw;
-        background: rgba(255, 255, 255, 0);
+        width: 95vw;
+        background: linear-gradient(rgba(255, 255, 255, 0.164), rgba(255, 255, 255, 0));
         border-bottom: 5px solid #ffffff50;
+        border-radius: 2%;
+        transition: all 0.5s;
+
+    }
+
+    .content {
+        /* position: relative; */
+        /* margin-top: 5%; */
+        margin-bottom: 2.5%;
+
+        border-radius: 3%;
+
+        /* bottom: 4%; */
     }
 
     #MCdaan {
         display: flex;
         /* height: 100vh !important; */
         min-height: 95% !important;
-        width: 100%;
+        width: 95%;
         max-width: 100%;
+        margin-top: 2%;
         overflow: hidden;
     }
 
@@ -1001,7 +1048,7 @@ body {
         justify-content: center;
         align-items: start;
         flex-direction: column;
-        margin-left: 1%;
+        margin-left: 2%;
 
     }
 
@@ -1081,7 +1128,8 @@ body {
     .MCClick {
         /* transition: all 3s; */
         flex-direction: column !important;
-        /* transition: all 1s; */
+        width: 100vw;
+        transition: all 0.5s;
 
     }
 
