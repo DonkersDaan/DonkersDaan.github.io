@@ -1042,6 +1042,8 @@ body {
 
     .daan {
         width: 40vw !important;
+        max-width: 300px !important;
+
         margin-right: 5% !important;
         margin-left: 0% !important;
         margin-bottom: 0 !important;
@@ -1085,8 +1087,6 @@ body {
         height: fit-content;
         width: fit-content;
         background: rgba(255, 255, 255, 0);
-        /* animation: move 8s infinite linear; */
-        /* border-bottom: 5px solid #ffffff50; */
     }
 
     @keyframes move {
@@ -1188,6 +1188,7 @@ body {
 
     .MCimage {
         width: 45vw;
+        max-width: 500px;
         height: auto;
         border-radius: 1%;
         margin: 5%;
@@ -1203,6 +1204,7 @@ body {
 
     .MCvideo {
         width: 45vw;
+        max-width: 500px;
         margin: 5%;
     }
 
@@ -1399,12 +1401,7 @@ body {
         z-index: 8;
         clip-path: none;
         background: rgba(0, 0, 0, 0);
-        /* background: conic-gradient(#47474742, #bbbbbb18); */
-        /* filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0)); */
         pointer-events: none;
-        /* border-radius: 50%; */
-        /* box-shadow: 0 20px 200px 200vw rgb(0, 0, 0); */
-        /* Adjust the 2vw value to control the border size */
 
     }
 
