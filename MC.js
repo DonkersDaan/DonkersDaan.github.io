@@ -8,13 +8,16 @@ const GAGtext = document.querySelectorAll('.MCp1GAG');
 const slideImage = document.querySelector('.NavigateImage');
 
 const buttonNav = document.querySelectorAll('.openDiv');
+const headerButton = document.querySelectorAll('.Header-Button');
 
 let clickCounter = 0;
 
 buttonNav.forEach((button, index) => {
     button.addEventListener('click', () => {
         if (index == 0) {
-            button.innerHTML = (button.innerHTML === 'Reveal') ? 'Close' : 'Reveal';
+            button.classList.toggle('closeDiv');
+            headerButton[0].classList.toggle('Header-Button-openDiv');
+            button.innerHTML = (button.innerHTML === 'Reveal') ? 'x' : 'Reveal';
             setTimeout(() => {
                 MC[1].scrollIntoView({ behavior: 'smooth' });
             }, 100);
@@ -23,7 +26,9 @@ buttonNav.forEach((button, index) => {
             ARtext.style.display = (ARtext.style.display === 'none') ? 'inline-block' : 'none';
         }
         if (index == 1) {
-            button.innerHTML = (button.innerHTML === 'Reveal') ? 'Close' : 'Reveal';
+            button.classList.toggle('closeDiv');
+            headerButton[1].classList.toggle('Header-Button-openDiv');
+            button.innerHTML = (button.innerHTML === 'Reveal') ? 'x' : 'Reveal';
             setTimeout(() => {
                 MC[2].scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 100);
@@ -40,7 +45,9 @@ buttonNav.forEach((button, index) => {
             }
         }
         if (index == 2) {
-            button.innerHTML = (button.innerHTML === 'Reveal') ? 'Close' : 'Reveal';
+            button.classList.toggle('closeDiv');
+            headerButton[2].classList.toggle('Header-Button-openDiv');
+            button.innerHTML = (button.innerHTML === 'Reveal') ? 'x' : 'Reveal';
             setTimeout(() => {
                 MC[3].scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 100);
