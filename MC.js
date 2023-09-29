@@ -9,8 +9,45 @@ const slideImage = document.querySelector('.NavigateImage');
 
 const buttonNav = document.querySelectorAll('.openDiv');
 const headerButton = document.querySelectorAll('.Header-Button');
+const MCSlider = document.querySelector('.MCOthersContent');
+
+const MCOthersInfo = document.getElementById('MCOthersInfo');
+const MCOthersText = document.querySelectorAll('.MCothersText');
+const MCbutton = document.querySelectorAll('.MCbutton');
+
+MCbutton.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        MCOthersText.forEach((text, i) => {
+            text.style.display = i === index ? 'block' : 'none';
+        });
+
+        // setTimeout(() => {
+        //     MC[4].scrollIntoView({ behavior: 'instant', block: 'start' });
+
+        // }, 1);
+
+    });
+});
+
+// const MCimg = document.querySelectorAll('.img');
+
+// MCbutton.forEach((button, index) => {
+//     const MCimage = MCimg[index]
+//     button.style.height = `${MCimage.clientHeight}px`;
+// });
 
 let clickCounter = 0;
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     var img = document.querySelectorAll('.img');
+//     var MCbutton = document.querySelectorAll('.MCbutton');
+
+//     MCbutton.style.width = img.offsetWidth + 'px';
+//     MCbutton.style.height = img.offsetHeight + 'px';
+// });
+
+
+
 
 buttonNav.forEach((button, index) => {
     button.addEventListener('click', () => {
@@ -63,6 +100,22 @@ buttonNav.forEach((button, index) => {
                 mcImage[i].classList.toggle('ImageGrow');
             }
             //If it is 'none' (?) then it is changed to inline-block. Else it is or changes to 'none'.
+        }
+        if (index == 3) {
+            button.classList.toggle('closeDiv');
+            headerButton[3].classList.toggle('Header-Button-openDiv');
+            button.innerHTML = (button.innerHTML === 'Reveal') ? 'x' : 'Reveal';
+            MCOthersInfo.style.display = (MCOthersInfo.style.display === 'none') ? 'flex' : 'none';
+            MCSlider.style.display = (MCSlider.style.display === 'none') ? 'flex' : 'none';
+
+            setTimeout(() => {
+                MC[4].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+            MC[4].classList.toggle('MCClick');
+
+            //Open the first link, by automatically clicking on it
+            var link = document.getElementById('button-1');
+            link.click();
         }
     });
 });
