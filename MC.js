@@ -13,41 +13,54 @@ const MCSlider = document.querySelector('.MCOthersContent');
 
 const MCOthersInfo = document.getElementById('MCOthersInfo');
 const MCOthersText = document.querySelectorAll('.MCothersText');
-const MCbutton = document.querySelectorAll('.MCbutton');
+const otherImg = document.querySelectorAll('.img');
+const imageSlider = document.querySelector('.image-slider');
 
-MCbutton.forEach((button, index) => {
+const sliderButtonsDiv = document.querySelector('.sliderButtons');
+const sliderButtons = document.querySelectorAll('.sliderButton');
+
+let currentMargin = 25;
+let imageActive = 0;
+
+sliderButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
-        MCOthersText.forEach((text, i) => {
-            text.style.display = i === index ? 'block' : 'none';
-        });
+        if (index == 0 && imageActive >= 1) {
+            console.log('button pressed is ' + button);
+            currentMargin += 25;
+            imageActive--;
 
-        // setTimeout(() => {
-        //     MC[4].scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+        if (index == 1 && imageActive <= otherImg.length - 2) {
+            console.log('button pressed is ' + button);
+            currentMargin -= 25;
+            imageActive++;
 
-        // }, 1);
+        }
 
-    });
+        imageSlider.style.marginLeft = currentMargin + '%';
+
+        toggleImageStyles(); //Image styles plus the corresponding text
+
+        setTimeout(() => {
+            MC[4].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+    })
 });
 
-// const MCimg = document.querySelectorAll('.img');
+function toggleImageStyles() {
+    otherImg.forEach((img, imgIndex) => {
+        img.classList.remove('otherActive');
+        if (imgIndex === imageActive) {
+            img.classList.add('otherActive');
+        }
 
-// MCbutton.forEach((button, index) => {
-//     const MCimage = MCimg[index]
-//     button.style.height = `${MCimage.clientHeight}px`;
-// });
-
-let clickCounter = 0;
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     var img = document.querySelectorAll('.img');
-//     var MCbutton = document.querySelectorAll('.MCbutton');
-
-//     MCbutton.style.width = img.offsetWidth + 'px';
-//     MCbutton.style.height = img.offsetHeight + 'px';
-// });
-
-
-
+        MCOthersText.forEach((text, i) => {
+            if (imgIndex === imageActive) {
+                text.style.display = i === imageActive ? 'block' : 'none';
+            }
+        });
+    });
+}
 
 buttonNav.forEach((button, index) => {
     button.addEventListener('click', () => {
@@ -101,22 +114,23 @@ buttonNav.forEach((button, index) => {
             }
             //If it is 'none' (?) then it is changed to inline-block. Else it is or changes to 'none'.
         }
-        if (index == 3) {
-            button.classList.toggle('closeDiv');
-            headerButton[3].classList.toggle('Header-Button-openDiv');
-            button.innerHTML = (button.innerHTML === 'Reveal') ? 'x' : 'Reveal';
-            MCOthersInfo.style.display = (MCOthersInfo.style.display === 'none') ? 'flex' : 'none';
-            MCSlider.style.display = (MCSlider.style.display === 'none') ? 'flex' : 'none';
+        // if (index == 3) {
+        //     button.classList.toggle('closeDiv');
+        //     headerButton[3].classList.toggle('Header-Button-openDiv');
+        //     button.innerHTML = (button.innerHTML === 'Reveal') ? 'x' : 'Reveal';
+        //     MCOthersInfo.style.display = (MCOthersInfo.style.display === 'none') ? 'flex' : 'none';
+        //     MCSlider.style.display = (MCSlider.style.display === 'none') ? 'flex' : 'none';
+        //     sliderButtonsDiv.style.display = (sliderButtonsDiv.style.display === 'none') ? 'flex' : 'none';
 
-            setTimeout(() => {
-                MC[4].scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-            MC[4].classList.toggle('MCClick');
+        //     setTimeout(() => {
+        //         MC[4].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        //     }, 100);
+        //     MC[4].classList.toggle('MCClick');
 
-            //Open the first link, by automatically clicking on it
-            var link = document.getElementById('button-1');
-            link.click();
-        }
+        //     //Open the first link, by automatically clicking on it
+        //     var link = document.getElementById('button-1');
+        //     link.click();
+        // }
     });
 });
 
