@@ -959,19 +959,14 @@ body {
 
     .MC {
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         align-items: center;
         flex-direction: row;
         height: fit-content;
         width: 95vw;
         background: linear-gradient(rgba(255, 255, 255, 0.164), rgba(255, 255, 255, 0));
         border-bottom: 5px solid #ffffff6c;
-        border-radius: 2%;
-    }
-
-    .MC:last-child {
-        border-bottom: none;
-
+        /* border-radius: 2%; */
     }
 
     .content {
@@ -1033,7 +1028,7 @@ body {
     }
 
     .MCOthersContent {
-        width: 100%;
+        width: 100vw;
         height: 50vh;
         display: flex;
         align-items: center;
@@ -1221,6 +1216,51 @@ body {
         margin: 5%;
     }
 
+    #MCLast {
+        width: 95vw;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .Header-Button:nth-last-of-type(5) {
+        /* position: absolute; */
+        z-index: 2;
+        /* width: 1vw;
+        left: 15%; */
+    }
+
+    .MCimageAnimate {
+        animation: carousel 5s infinite ease-in-out;
+        height: 20vh;
+        width: auto;
+        /* margin-right: 30vw; */
+    }
+
+    @keyframes carousel {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+            transform: translateX(-5%);
+        }
+
+        100% {
+            opacity: 0;
+        }
+
+    }
+
+    .othersBeforeOpening {
+        width: 100vw;
+        display: flex;
+        justify-content: end;
+        /* flex-direction: row; */
+
+    }
+
     .growAnim {
         animation: reveal both linear;
         animation-duration: 1ms;
@@ -1248,7 +1288,7 @@ body {
     .MCvideo {
         width: 45vw;
         max-width: 500px;
-        margin: 5%;
+        margin: 2%;
     }
 
     .video {
@@ -1315,6 +1355,7 @@ body {
 
     .MCothersText {
         height: fit-content;
+        width: 100vw;
     }
 
     .MCothersText .MCheader {

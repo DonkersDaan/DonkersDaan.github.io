@@ -11,6 +11,7 @@ const buttonNav = document.querySelectorAll('.openDiv');
 const headerButton = document.querySelectorAll('.Header-Button');
 const MCSlider = document.querySelector('.MCOthersContent');
 
+const MCOthersClosed = document.querySelector('.othersBeforeOpening');
 const MCOthersInfo = document.getElementById('MCOthersInfo');
 const MCOthersText = document.querySelectorAll('.MCothersText');
 const otherImg = document.querySelectorAll('.img');
@@ -61,6 +62,24 @@ function toggleImageStyles() {
         });
     });
 }
+
+const MCimageAnimate = document.querySelectorAll('.MCimageAnimate');
+let currentIndexImage = 1;
+
+function changeImage() {
+    MCimageAnimate.forEach((img, index) => {
+        if (index === currentIndexImage) {
+            img.style.display = 'block';
+        } else {
+            img.style.display = 'none';
+        }
+    });
+
+    currentIndexImage = (currentIndexImage + 1) % MCimageAnimate.length;
+}
+
+setInterval(changeImage, 5000);
+
 
 buttonNav.forEach((button, index) => {
     button.addEventListener('click', () => {
@@ -114,23 +133,24 @@ buttonNav.forEach((button, index) => {
             }
             //If it is 'none' (?) then it is changed to inline-block. Else it is or changes to 'none'.
         }
-        // if (index == 3) {
-        //     button.classList.toggle('closeDiv');
-        //     headerButton[3].classList.toggle('Header-Button-openDiv');
-        //     button.innerHTML = (button.innerHTML === 'Reveal') ? 'x' : 'Reveal';
-        //     MCOthersInfo.style.display = (MCOthersInfo.style.display === 'none') ? 'flex' : 'none';
-        //     MCSlider.style.display = (MCSlider.style.display === 'none') ? 'flex' : 'none';
-        //     sliderButtonsDiv.style.display = (sliderButtonsDiv.style.display === 'none') ? 'flex' : 'none';
+        if (index == 3) {
+            MCOthersClosed.style.display = (MCOthersClosed.style.display === 'none') ? 'flex' : 'none';
+            button.classList.toggle('closeDiv');
+            headerButton[3].classList.toggle('Header-Button-openDiv');
+            button.innerHTML = (button.innerHTML === 'Reveal') ? 'x' : 'Reveal';
+            MCOthersInfo.style.display = (MCOthersInfo.style.display === 'none') ? 'flex' : 'none';
+            MCSlider.style.display = (MCSlider.style.display === 'none') ? 'flex' : 'none';
+            sliderButtonsDiv.style.display = (sliderButtonsDiv.style.display === 'none') ? 'flex' : 'none';
 
-        //     setTimeout(() => {
-        //         MC[4].scrollIntoView({ behavior: 'smooth', block: 'start' });
-        //     }, 100);
-        //     MC[4].classList.toggle('MCClick');
+            setTimeout(() => {
+                MC[4].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+            MC[4].classList.toggle('MCClick');
 
-        //     //Open the first link, by automatically clicking on it
-        //     var link = document.getElementById('button-1');
-        //     link.click();
-        // }
+            //Open the first link, by automatically clicking on it
+            // var link = document.getElementById('button-1');
+            // link.click();
+        }
     });
 });
 
