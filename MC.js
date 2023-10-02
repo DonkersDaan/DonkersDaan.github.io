@@ -23,7 +23,8 @@ const sliderButtons = document.querySelectorAll('.sliderButton');
 let currentMargin = 25;
 let imageActive = 0;
 
-if (navigator.userAgent.indexOf('Chrome') != -1 && window.innerWidth <= 500) {
+// && window.innerWidth <= 500
+if (navigator.userAgent.indexOf('Chrome') != -1) {
     document.getElementById('MCLast').style.marginBottom = '15%';
 }
 
