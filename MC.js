@@ -23,6 +23,10 @@ const sliderButtons = document.querySelectorAll('.sliderButton');
 let currentMargin = 25;
 let imageActive = 0;
 
+if (navigator.userAgent.indexOf('Chrome') != -1) {
+    document.getElementById('MCLast').style.marginBottom = '7%';
+}
+
 sliderButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
         if (index == 0 && imageActive >= 1) {
