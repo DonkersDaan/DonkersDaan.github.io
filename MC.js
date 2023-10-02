@@ -24,7 +24,7 @@ let currentMargin = 25;
 let imageActive = 0;
 
 if (navigator.userAgent.indexOf('Chrome') != -1) {
-    document.getElementById('MCLast').style.marginBottom = '7%';
+    document.getElementById('MCLast').style.marginBottom = '10%';
 }
 
 sliderButtons.forEach((button, index) => {
