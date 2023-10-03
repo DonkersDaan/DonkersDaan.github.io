@@ -419,7 +419,6 @@ body {
     }
 }
 
-
 @keyframes pulseShadow {
     0% {
         filter: drop-shadow(2rem 0.5rem 2.5rem rgb(255, 255, 255));
