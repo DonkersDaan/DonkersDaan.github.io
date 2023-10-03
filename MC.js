@@ -1,5 +1,7 @@
-var MC = document.querySelectorAll('.MC');
 MCContainer = document.getElementById("mobile-container");
+textBoxes = document.querySelectorAll('.textboxes');
+
+const MC = document.querySelectorAll('.MC');
 const videoDiv = document.querySelector('.MCvideo');
 const mcImage = document.querySelectorAll('.MCimage');
 const ARtext = document.getElementById('ARtext');
@@ -85,7 +87,6 @@ function changeImage() {
 
 setInterval(changeImage, 5000);
 
-
 buttonNav.forEach((button, index) => {
     button.addEventListener('click', () => {
         if (index == 0) {
@@ -151,10 +152,6 @@ buttonNav.forEach((button, index) => {
                 MC[4].scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 100);
             MC[4].classList.toggle('MCClick');
-
-            //Open the first link, by automatically clicking on it
-            // var link = document.getElementById('button-1');
-            // link.click();
         }
     });
 });

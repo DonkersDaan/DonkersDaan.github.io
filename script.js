@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mobile = document.getElementById("mobile-container");
 
-    textBoxes = document.querySelectorAll('.textboxes');
     const hoverText = document.querySelectorAll('.reveal');
     const hoverText2 = document.querySelectorAll('.reveal2');
     const hoverText3 = document.querySelectorAll('.reveal3');
