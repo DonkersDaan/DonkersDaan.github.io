@@ -40,7 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         video.src = "./Hobby/BenteDaanVid1.mp4";
         video.load();
         video.poster = "./Hobby/BenteDaanCover.png";
-        video.addEventListener("canplaythrough", () => image.removeAttribute('loading'));
+        video.addEventListener("canplaythrough", () => {
+            images.forEach(image => image.removeAttribute('loading'));
+        });
         video.addEventListener("mouseover", () => video.pause());
         video.addEventListener("mouseleave", () => video.play());
     }
