@@ -134,8 +134,8 @@ buttonNav.forEach((button, index) => {
             });
 
             for (let i = 9; i <= 11; i++) {
-                mcImage[i].style.display = (mcImage[i].style.display === 'none') ? 'block' : 'none';
-                mcImage[i].classList.toggle('ImageGrow');
+                mcImage[9].style.display = (mcImage[i].style.display === 'none') ? 'block' : 'none';
+                mcImage[9].classList.toggle('ImageGrow');
             }
             //If it is 'none' (?) then it is changed to inline-block. Else it is or changes to 'none'.
         }

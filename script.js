@@ -242,19 +242,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         images.forEach((image, index) => {
             if (index >= 8 && index <= 11) {
-                image.style.display = "inline";
-                const hoverTextIndex = index - 7;
-                image.addEventListener("mouseover", () => {
-                    hoverText2.forEach((text, i) => text.style.display = (i === hoverTextIndex) ? 'block' : 'none');
-                    if (window.innerWidth < 1600) headerClass[4].style.marginTop = '16vh';
-                });
-                image.addEventListener("mouseleave", () => {
-                    headerClass[4].style.marginTop = '0vh';
-                    hoverText2[0].style.display = 'block';
-                    hoverText2.forEach((text, i) => {
-                        if (i !== 0) text.style.display = 'none';
-                    });
-                });
+                /////////////////////////////////////////////////////////////////////////Activate after september 2024
+                // image.style.display = "inline";
+
+                /////////////////////////////////////////////////////////////////////////deactivate after september 2024
+                images[8].style.display = "inline";
+
+                /////////////////////////////////////////////////////////////////////////Activate after september 2024
+
+                // const hoverTextIndex = index - 7;
+                // image.addEventListener("mouseover", () => {
+                //     hoverText2.forEach((text, i) => text.style.display = (i === hoverTextIndex) ? 'block' : 'none');
+                //     if (window.innerWidth < 1600) headerClass[4].style.marginTop = '16vh';
+                // });
+                // image.addEventListener("mouseleave", () => {
+                //     headerClass[4].style.marginTop = '0vh';
+                //     hoverText2[0].style.display = 'block';
+                //     hoverText2.forEach((text, i) => {
+                //         if (i !== 0) text.style.display = 'none';
+                //     });
+                // });
+
             } else {
                 image.style.display = "none";
             }
