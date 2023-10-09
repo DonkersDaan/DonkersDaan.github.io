@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 image.style.display = "inline";
                 image.addEventListener("mouseover", () => {
                     hoverText.forEach((text, i) => text.style.display = (i === index) ? 'block' : 'none');
-                    if (window.innerWidth < 1675) headerClass[3].style.marginTop = '17vh';
+                    // if (window.innerWidth < 1675) headerClass[3].style.marginTop = '17vh';
                 });
                 image.addEventListener("mouseleave", () => {
                     headerClass[3].style.marginTop = '0vh';
