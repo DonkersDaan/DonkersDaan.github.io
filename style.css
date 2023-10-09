@@ -969,6 +969,11 @@ body {
         font-size: 0.4rem;
     } */
 
+    .cursor {
+        display: none;
+    }
+
+
     .textboxes {
         /* margin-top: 15vh; */
         font-size: 0.5rem;

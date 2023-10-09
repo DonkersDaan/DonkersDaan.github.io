@@ -68,12 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (moveOnce === 0) moveDivs();
             button.innerHTML = getButtonText(buttonIndex);
 
-            // if (!cursor.classList.contains('expand')) {
-            //     cursor.classList.add('animate-cursor1');
+            if (!cursor.classList.contains('expand')) {
+                cursor.classList.add('animate-cursor1');
 
-            // }
+            }
 
-            cursor.classList.add('animate-cursor1');
+            // cursor.classList.add('animate-cursor1');
 
             // cursor.classList.add('expand2');
 
