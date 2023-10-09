@@ -68,7 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (moveOnce === 0) moveDivs();
             button.innerHTML = getButtonText(buttonIndex);
 
+            // if (!cursor.classList.contains('expand')) {
+            //     cursor.classList.add('animate-cursor1');
+
+            // }
+
             cursor.classList.add('animate-cursor1');
+
             // cursor.classList.add('expand2');
 
             // setTimeout(() => {
@@ -80,7 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('mouseleave', () => {
             button.innerHTML = originalText;
 
+            // if (cursor.classList.contains('expand')) {
+            //     cursor.classList.remove('expand');
+
+            // }
+
             cursor.classList.remove('animate-cursor1');
+
+
 
         })
 
@@ -361,49 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
         video.style.display = "none";
     }
 
-    //Cursor functionality
-    // document.addEventListener('mousemove', e => {
-    //     cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
-    // })
-
-    // document.addEventListener('click', e => {
-    //     if (e.target === pyramidSides) {
-    //         cursor.classList.add('expand');
-    //         setTimeout(() => {
-    //             cursor.classList.remove('expand');
-    //         }, 2000);
-    //     }
-    // })
-
-    const mousemoveHandler = (e) => {
-        cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;");
-    };
-
-    document.addEventListener('mousemove', mousemoveHandler);
-
-    document.addEventListener('click', e => {
-        if (e.target === pyramidSides) {
-            document.removeEventListener('mousemove', mousemoveHandler);
-            cursor.classList.add('expand');
-            setTimeout(() => {
-                cursor.classList.remove('expand');
-                document.addEventListener('mousemove', mousemoveHandler);
-
-            }, 2000);
-        }
-
-        // else {
-        //     cursor.classList.add('expand2');
-        //     setTimeout(() => {
-        //         cursor.classList.remove('expand2');
-        //         document.addEventListener('mousemove', mousemoveHandler);
-
-        //     }, 500);
-        // }
-    });
-
-
-
     //Scroll functionality
     let isScrolling = false;
 
@@ -448,4 +418,48 @@ document.addEventListener('DOMContentLoaded', () => {
     media.addEventListener('scroll', () => {
         updateProgressBar(media, scrollProgressLeft, scrollProgressText);
     });
+
+    //Cursor functionality
+    // document.addEventListener('mousemove', e => {
+    //     cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
+    // })
+
+    // document.addEventListener('click', e => {
+    //     if (e.target === pyramidSides) {
+    //         cursor.classList.add('expand');
+    //         setTimeout(() => {
+    //             cursor.classList.remove('expand');
+    //         }, 2000);
+    //     }
+    // })
+
+    const mousemoveHandler = (e) => {
+        cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;");
+    };
+
+    document.addEventListener('mousemove', mousemoveHandler);
+
+    document.addEventListener('click', e => {
+        if (e.target === pyramidSides) {
+            document.removeEventListener('mousemove', mousemoveHandler);
+            cursor.classList.add('expand');
+            setTimeout(() => {
+                cursor.classList.remove('expand');
+                document.addEventListener('mousemove', mousemoveHandler);
+
+            }, 2000);
+        }
+
+        // else {
+        //     cursor.classList.add('expand2');
+        //     setTimeout(() => {
+        //         cursor.classList.remove('expand2');
+        //         document.addEventListener('mousemove', mousemoveHandler);
+
+        //     }, 500);
+        // }
+    });
+
+
+
 });

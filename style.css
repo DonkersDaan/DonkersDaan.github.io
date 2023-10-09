@@ -28,7 +28,7 @@ html {
 * {
     /* Firefox */
     -ms-overflow-style: none;
-    cursor: none;
+    /* cursor: none; */
 }
 
 .cursor {
@@ -38,8 +38,8 @@ html {
     height: 20px;
     border: 1px solid white;
     border-radius: 50%;
-    /* transition-duration: .2s;
-    transition-timing-function: ease-out; */
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
     pointer-events: none;
     animation: cursorAnim 1s infinite alternate;
 }
@@ -58,7 +58,7 @@ html {
 }
 
 .cursor.animate-cursor1 {
-    animation: cursorAnim1 1s infinite alternate;
+    animation: cursorAnim1 1s forwards !important;
 }
 
 @keyframes cursorAnim {
@@ -73,11 +73,11 @@ html {
 
 @keyframes cursorAnim1 {
     from {
-        transform: scale(1);
+        transform: scale(3);
     }
 
     to {
-        transform: scale(2);
+        transform: scale(5);
     }
 }
 
@@ -562,7 +562,7 @@ body {
 
 .button:hover {
     color: white;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 .button.special {
@@ -647,7 +647,7 @@ body {
 
 .pyramid-loader .wrapper .side4 {
     transform: rotateX(30deg);
-    /* cursor: pointer; */
+    cursor: pointer;
     pointer-events: all;
 }
 
