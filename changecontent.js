@@ -5,7 +5,7 @@ const buttoncontainer = document.getElementById("button-container");
 
 const pyramidLoader = document.querySelector('.pyramid-loader');
 const wrapp = document.querySelector('.wrapper');
-const pyramidSides = document.querySelector('.side4');
+pyramidSides = document.querySelector('.side4');
 let isAnimating = false;
 let isChangingColor = false;
 let turnCounter = 0;
