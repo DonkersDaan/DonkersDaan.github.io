@@ -271,6 +271,7 @@ body {
     border-right: 0.3vw solid rgba(255, 255, 255, 0.699);
     background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.501), rgba(187, 187, 187, 0.068));
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .image {
@@ -802,28 +803,35 @@ body {
     #phome {
         font-size: small;
     }
+
+    .p1 {
+        font-size: 1.1rem;
+    }
+
+
+
 }
 
 @media only screen and (max-width: 1600px) {
     .textboxes {
         /* margin-top: 25vh; */
-        font-size: small;
+        font-size: medium;
     }
 
-    .p1 {
+    /* .p1 {
         font-size: 1.1rem;
-    }
+    } */
 }
 
 @media only screen and (max-width: 1400px) {
 
     .p1 {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 
     .textboxes {
         /* margin-top: 15vh; */
-        font-size: x-small;
+        font-size: small;
     }
 
     .button {
