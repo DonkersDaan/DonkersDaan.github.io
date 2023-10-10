@@ -776,7 +776,7 @@ body {
 
 .animation-active::after {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 75%, #ffffff00 100%);
-    animation: drop2 6s 0s;
+    animation: drop2 4s .2s;
     opacity: 0.5;
     z-index: 50 !important;
     pointer-events: none;
@@ -810,7 +810,7 @@ body {
 
 @keyframes drop2 {
     0% {
-        top: -300%;
+        top: -200%;
     }
 
     100% {
