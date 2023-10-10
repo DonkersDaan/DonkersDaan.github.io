@@ -49,16 +49,21 @@ html {
     width: 20px;
     height: 20px;
     position: absolute;
-    border: 8px solid rgb(255, 255, 255);
+    z-index: 50;
+    border: 3px solid rgb(255, 255, 255);
     border-radius: 50%;
     opacity: .5;
-    left: -8px;
-    top: -8px;
+    left: -3px;
+    top: -3px;
+    pointer-events: none;
     animation: cursorAnim2 .5s infinite alternate;
 }
 
 .cursor.animate-cursor1 {
-    animation: cursorAnim1 1s forwards !important;
+    position: absolute;
+    animation: cursorAnim1 1s forwards;
+    pointer-events: none;
+
 }
 
 @keyframes cursorAnim {
@@ -124,14 +129,21 @@ html {
 }
 
 .expand {
-    animation: cursorAnim3 2s forwards;
-    border: 1px solid rgb(255, 255, 255);
+    position: absolute;
+    z-index: 50;
+    animation: cursorAnim3 1.8s forwards;
+    border: 5px solid rgb(255, 255, 255);
+    pointer-events: none;
+
 }
 
-.expand2 {
+/* .expand2 {
+    position: absolute;
+    z-index: 50;
     animation: cursorAnim4 .5s forwards;
     border: 1px solid rgb(255, 255, 255);
-}
+    pointer-events: none;
+} */
 
 
 #mobile-container {
@@ -430,7 +442,7 @@ body {
     width: 50vw;
     display: none;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .textboxes {
