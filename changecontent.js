@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    cursor = document.querySelector('.cursor');
-
     const overlay = document.getElementById("overlay");
     const prismText = document.getElementById("ClickPrismText");
     const buttoncontainer = document.getElementById("button-container");
@@ -191,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const [, r, g, b] = match;
         return [parseInt(r, 16), parseInt(g, 16), parseInt(b, 16)];
     }
-
 
     // document.addEventListener('click', e => {
     //     if (e.target === pyramidSides) {

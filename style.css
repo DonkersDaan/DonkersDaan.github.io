@@ -59,33 +59,15 @@ html {
     animation: cursorAnim2 .5s infinite alternate;
 }
 
-.cursor.animate-cursor1 {
-    position: absolute;
-    animation: cursorAnim1 1s forwards;
-    pointer-events: none;
-
-}
-
 @keyframes cursorAnim {
     from {
         transform: scale(1);
     }
 
     to {
-        transform: scale(.7);
+        transform: scale(.9);
     }
 }
-
-@keyframes cursorAnim1 {
-    from {
-        transform: scale(3);
-    }
-
-    to {
-        transform: scale(5);
-    }
-}
-
 
 @keyframes cursorAnim2 {
     from {
@@ -113,21 +95,6 @@ html {
     }
 }
 
-@keyframes cursorAnim4 {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(2);
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 0.1;
-    }
-}
-
 .expand {
     position: absolute;
     z-index: 50;
@@ -137,19 +104,9 @@ html {
 
 }
 
-/* .expand2 {
-    position: absolute;
-    z-index: 50;
-    animation: cursorAnim4 .5s forwards;
-    border: 1px solid rgb(255, 255, 255);
-    pointer-events: none;
-} */
-
-
 #mobile-container {
     display: none;
 }
-
 
 body {
     background-color: #272222;

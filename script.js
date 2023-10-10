@@ -1,4 +1,5 @@
 // document.addEventListener('DOMContentLoaded', () => {
+cursor = document.querySelector('.cursor');
 
 const textRight = document.querySelector(".p1");
 const headerClass = document.querySelectorAll('.header');
@@ -66,17 +67,11 @@ buttons.forEach(button => {
         if (moveOnce === 0) moveDivs();
         button.innerHTML = getButtonText(buttonIndex);
 
-        if (!cursor.classList.contains('expand')) {
-            cursor.classList.add('animate-cursor1');
-
-        }
-
     });
 
     button.addEventListener('mouseleave', () => {
         button.innerHTML = originalText;
 
-        cursor.classList.remove('animate-cursor1');
 
     })
 
