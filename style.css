@@ -47,13 +47,13 @@ html {
 .Shrink {
     transition-duration: .2s;
     transition-timing-function: ease-out;
-    animation: cursorAnim 1s infinite alternate;
+    animation: cursorAnim .5s forwards alternate;
 }
 
 .Grow {
     transition-duration: .2s;
     transition-timing-function: ease-out;
-    animation: cursorAnim1 1s forwards alternate;
+    animation: cursorAnim1 .5s forwards alternate;
 }
 
 .cursor::after {
@@ -73,7 +73,7 @@ html {
 
 @keyframes cursorAnim {
     from {
-        transform: scale(1);
+        transform: scale(5);
     }
 
     to {
@@ -97,7 +97,7 @@ html {
     }
 
     to {
-        transform: scale(.4);
+        transform: scale(.7);
     }
 }
 
