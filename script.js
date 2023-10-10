@@ -67,10 +67,31 @@ buttons.forEach(button => {
         if (moveOnce === 0) moveDivs();
         button.innerHTML = getButtonText(buttonIndex);
 
+        if (!cursor.classList.contains('expand')) {
+            // cursor.style.animationName = ``;
+            cursor.classList.remove('Shrink')
+            setTimeout(() => {
+                cursor.classList.add('Grow');
+
+            }, 15);
+
+        }
+        console.log(cursor.style.animationName);
+
+
     });
 
     button.addEventListener('mouseleave', () => {
         button.innerHTML = originalText;
+        cursor.classList.remove('Grow');
+        setTimeout(() => {
+            // cursor.style.animationName = `cursorAnim`;
+            cursor.classList.add('Shrink')
+
+        }, 15);
+
+
+        console.log(cursor.style.animationName);
 
 
     })
