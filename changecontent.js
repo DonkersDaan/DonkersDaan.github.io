@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isAnimating = false;
     let isChangingColor = false;
     let turnCounter = 0;
+    let leaveCounter = 0;
     let loadCounter = 0;
     let currentColor = "#272222"; // Initial background color
 
@@ -48,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     pyramidSides.addEventListener("mouseover", () => {
-        if (turnCounter > 0) {
+
+        if (turnCounter > 0 && leaveCounter >= 1) {
             overlay.style.display = 'block';
             clearInterval(fadeOut);
             overlayActive();
@@ -60,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (turnCounter > 0) {
             clearInterval(fadeIn);
             overlayInactive();
+            leaveCounter++;
         }
     });
 
@@ -92,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     pyramidSides.addEventListener('click', () => {
-
         overlay.style.pointerEvents = "none";
         turnCounter = 1;
         prismText.style.display = "none";
@@ -102,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.display = 'none';
 
         if (!isAnimating) {
-
+            leaveCounter--;
             pyramidLoader.classList.add('clicked');
 
             document.removeEventListener('mousemove', mousemoveHandler);
